@@ -78,7 +78,9 @@ const AppAlertDialog = forwardRef((props, ref) => {
         </View>
       );
     }
+    return <View />;
   }, [modalProps]);
+
   return (
     <Modal
       isVisible={isModalVisible}

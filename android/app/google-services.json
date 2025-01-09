@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "973900537874",
+    "project_id": "do-near",
+    "storage_bucket": "do-near.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973900537874:android:d2e117dfc835e2d5a8b8cb",
+        "android_client_info": {
+          "package_name": "co.donear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973900537874-pdt9obj2t5eepp1a0g03qlcehcqtd23g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8EbLhq7py101kIAdYg6uk43_CEoRmEfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973900537874-pdt9obj2t5eepp1a0g03qlcehcqtd23g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "973900537874-du99kd525ttctbt9thjv9qq18e5dqi1u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.donear"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973900537874:android:5f19a8ad4a865ca6a8b8cb",
+        "android_client_info": {
+          "package_name": "com.donear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973900537874-pdt9obj2t5eepp1a0g03qlcehcqtd23g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8EbLhq7py101kIAdYg6uk43_CEoRmEfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973900537874-pdt9obj2t5eepp1a0g03qlcehcqtd23g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "973900537874-du99kd525ttctbt9thjv9qq18e5dqi1u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.donear"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
