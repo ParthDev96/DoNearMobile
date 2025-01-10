@@ -7,19 +7,20 @@
 
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import RootNavigator from './src/routes/RootNavigator';
+// import RootNavigator from './src/routes/RootNavigator';
 import {StatusBar, StyleSheet} from 'react-native';
 import {PaperProvider} from 'react-native-paper';
 import Toast from 'react-native-toast-message';
 import toastConfig from './src/config/toastConfig';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import AppAlertDialog, {
-  AppAlertDialogManager,
-} from './src/components/AppAlertDialog';
+// import AppAlertDialog, {
+//   AppAlertDialogManager,
+// } from './src/components/AppAlertDialog';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/redux/store';
+import RootStackScreen from 'src/routes/stackNav';
 
 function App(): React.JSX.Element {
   return (
@@ -34,16 +35,16 @@ function App(): React.JSX.Element {
                   translucent
                   backgroundColor="transparent"
                 />
-                <RootNavigator />
+                <RootStackScreen />
               </PaperProvider>
               <Toast config={toastConfig} />
-              <AppAlertDialog
+              {/* <AppAlertDialog
                 ref={(ref: any) => {
                   if (ref) {
                     AppAlertDialogManager.setModalRef(ref);
                   }
                 }}
-              />
+              /> */}
             </SafeAreaProvider>
           </GestureHandlerRootView>
         </NavigationContainer>

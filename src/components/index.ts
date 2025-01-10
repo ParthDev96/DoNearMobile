@@ -1,17 +1,13 @@
-import CustomHeader from './CustomHeader';
-import DatePickerComponent from './DatePickerComponent';
-import ImagePickerModal from './ImagePickerModal';
+import AnimatedButton from './AnimatedButton';
+import CustomText from './CustomText';
+import CustomTextInput from './CustomTextInput';
 import NestedTextComponent from './NestedTextComponent';
-import TextComponent from './TextComponent';
-import TextInputComponent from './TextInputComponent';
-import TouchableComponent from './TouchableComponent';
+import RoundedButton from './RoundedButton';
 
 export default {
-  TextComponent,
-  TouchableComponent,
-  CustomHeader,
-  ImagePickerModal,
-  TextInputComponent,
-  DatePickerComponent,
   NestedTextComponent,
+  CustomText,
+  AnimatedButton,
+  RoundedButton,
+  CustomTextInput,
 };

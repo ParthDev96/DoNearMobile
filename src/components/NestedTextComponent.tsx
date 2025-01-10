@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, TextProps, StyleSheet, TextStyle} from 'react-native';
+import utils from 'src/utils';
 
 interface Props extends TextProps {
   titleText: string;
@@ -22,10 +23,10 @@ export default NestedTextComponent;
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 15,
+    fontSize: utils.normalize(15),
   },
   text2: {
-    fontSize: 17,
+    fontSize: utils.normalize(17),
     fontWeight: '600',
   },
 });

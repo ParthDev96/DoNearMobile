@@ -1,11 +1,9 @@
 import React from 'react';
-import ToastComponent, {
-  ToastComponentProps,
-} from '../components/ToastComponent';
+import {View} from 'react-native';
 
 const toastConfig: any = {
-  customToast: ({props}: {props: ToastComponentProps}) => {
-    return <ToastComponent {...props} />;
+  customToast: ({}: {props: any}) => {
+    return <View />;
   },
 };
 
