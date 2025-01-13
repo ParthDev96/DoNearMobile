@@ -1,7 +1,5 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {
-  Image,
-  ImageStyle,
   Platform,
   StyleSheet,
   TouchableOpacityProps,
@@ -10,12 +8,11 @@ import {
 import config from 'src/config';
 import utils from 'src/utils';
 import AnimatedButton from './AnimatedButton';
+import {default as AntDesign} from 'react-native-vector-icons/AntDesign';
 
 type Props = {
   onPress: () => void;
   containerStyle?: ViewStyle;
-  image?: any;
-  imageStyle?: ImageStyle;
   extraButtonProps?: TouchableOpacityProps;
   customImage?: React.ReactNode;
   scaleValue?: number;
@@ -24,15 +21,24 @@ type Props = {
 
 const RoundedButton = (props: Props) => {
   const {
-    imageStyle,
     containerStyle,
     onPress,
-    image = config.images.ic_cart_empty,
     extraButtonProps,
     customImage,
     scaleValue,
     hasShadow = true,
   } = props;
+
+  const renderIcon = useMemo(() => {
+    return (
+      <AntDesign
+        name="arrowright"
+        size={utils.normalize(30)}
+        color={config.colors.COLOR_PRIMARY}
+      />
+    );
+  }, []);
+
   return (
     <AnimatedButton
       activeOpacity={0.99}
@@ -46,15 +52,7 @@ const RoundedButton = (props: Props) => {
       }}
       scaleValue={scaleValue}
       {...extraButtonProps}>
-      {customImage ? (
-        customImage
-      ) : (
-        <Image
-          resizeMode="contain"
-          source={image}
-          style={[styles.loginImage, imageStyle]}
-        />
-      )}
+      {customImage ? customImage : renderIcon}
     </AnimatedButton>
   );
 };

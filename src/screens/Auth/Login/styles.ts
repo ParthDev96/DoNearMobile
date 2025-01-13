@@ -8,7 +8,7 @@ export default StyleSheet.create({
     marginTop: utils.normalize(30),
   },
   centerContainer: {
-    backgroundColor: config.colors.COLOR_SECONDARY + '20',
+    backgroundColor: config.colors.COLOR_PRIMARY + '20',
     width: config.ConstantVariables.DYNAMIC_COMPONENTS_WIDTH,
     alignSelf: 'center',
     borderRadius: utils.normalize(10),
@@ -19,7 +19,7 @@ export default StyleSheet.create({
     fontFamily: config.Font.NotoSansRegular,
     marginTop: utils.normalize(15),
     fontSize: utils.normalize(13),
-    color: config.colors.COLOR_APP_BROWN,
+    color: config.colors.COLOR_PRIMARY,
     marginHorizontal: utils.normalize(30),
     textAlign: 'center',
   },
@@ -27,7 +27,7 @@ export default StyleSheet.create({
     fontFamily: config.Font.NotoSansBold,
     marginTop: utils.normalize(25),
     fontSize: utils.normalize(13),
-    color: config.colors.COLOR_APP_BROWN,
+    color: config.colors.COLOR_PRIMARY,
     marginHorizontal: utils.normalize(30),
     textDecorationLine: 'underline',
   },
@@ -44,7 +44,7 @@ export default StyleSheet.create({
     fontFamily: config.Font.NotoSansBold,
     fontSize: utils.normalize(15),
     lineHeight: utils.normalize(30),
-    color: config.colors.COLOR_APP_BROWN,
+    color: config.colors.COLOR_PRIMARY,
     textDecorationLine: 'underline',
   },
 
@@ -70,7 +70,7 @@ export default StyleSheet.create({
         }
       : {
           backgroundColor: config.colors.COLOR_WHITE,
-          shadowColor: config.colors.COLOR_APP_BROWN + '80',
+          shadowColor: config.colors.COLOR_PRIMARY + '80',
           shadowOffset: {
             width: 0,
             height: 8,
@@ -86,19 +86,19 @@ export default StyleSheet.create({
     marginTop: utils.normalize(25),
     marginBottom: utils.normalize(40),
     fontSize: utils.normalize(15),
-    color: config.colors.COLOR_APP_BROWN,
+    color: config.colors.COLOR_PRIMARY,
   },
   welcomeBackText: {
     fontFamily: config.Font.NotoSansBold,
     fontSize: utils.normalize(21),
     lineHeight: utils.normalize(30),
-    color: config.colors.COLOR_APP_BROWN,
+    color: config.colors.COLOR_PRIMARY,
   },
   signInText: {
     fontFamily: config.Font.NotoSansMedium,
     fontSize: utils.normalize(15),
     lineHeight: utils.normalize(18),
-    color: config.colors.COLOR_APP_BROWN,
+    color: config.colors.COLOR_PRIMARY,
   },
   registerText: {
     fontFamily: config.Font.NotoSansBold,
@@ -158,7 +158,7 @@ export default StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: config.colors.COLOR_PRIMARY,
+    backgroundColor: config.colors.COLOR_SECONDARY,
   },
   loginTitle: {
     fontSize: utils.normalize(18),
