@@ -6,6 +6,7 @@ export type RootNavPropsType = {
   Splash: {};
   Login: {};
   Register: {};
+  HomeScreen: {};
 
   TabStack: NavigatorScreenParams<any>;
 };

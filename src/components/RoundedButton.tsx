@@ -34,7 +34,7 @@ const RoundedButton = (props: Props) => {
       <AntDesign
         name="arrowright"
         size={utils.normalize(30)}
-        color={config.colors.COLOR_PRIMARY}
+        color={config.colors.COLOR_APP_TEXT}
       />
     );
   }, []);
@@ -74,16 +74,18 @@ const styles = StyleSheet.create({
   },
   shadowContainer:
     Platform.OS === 'android'
-      ? {}
+      ? {
+          elevation: utils.normalize(6),
+        }
       : {
           backgroundColor: config.colors.COLOR_WHITE,
-          shadowColor: config.colors.COLOR_PRIMARY + '80',
+          shadowColor: config.colors.COLOR_APP_TEXT + '80',
           shadowOffset: {
             width: 0,
-            height: 8,
+            height: utils.normalize(8),
           },
           shadowOpacity: 0.5,
-          shadowRadius: 4,
+          shadowRadius: utils.normalize(4),
           zIndex: 100,
         },
 });

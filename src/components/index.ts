@@ -3,6 +3,7 @@ import CustomText from './CustomText';
 import CustomTextInput from './CustomTextInput';
 import NestedTextComponent from './NestedTextComponent';
 import RoundedButton from './RoundedButton';
+import TouchableComponent from './TouchableComponent';
 
 export default {
   NestedTextComponent,
@@ -10,4 +11,5 @@ export default {
   AnimatedButton,
   RoundedButton,
   CustomTextInput,
+  TouchableComponent,
 };

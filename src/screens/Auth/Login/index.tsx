@@ -53,7 +53,10 @@ const Login = ({navigation}: StackPropsType<'Login'>) => {
       return;
     }
     Keyboard.dismiss();
-
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'HomeScreen'}],
+    });
     // const payload: any = {
     //   email: emailText,
     //   password: passwordText,
@@ -75,14 +78,14 @@ const Login = ({navigation}: StackPropsType<'Login'>) => {
     //     });
     //   }
     // }
-  }, [email, password, t]);
+  }, [email, navigation, password, t]);
 
   return (
     <View style={styles.container}>
       <ScrollView
         keyboardShouldPersistTaps="always"
         contentContainerStyle={{paddingTop: insets.top}}
-        style={styles.container}>
+        style={styles.scrollView}>
         <View style={styles.logoImageMainContainer}>
           <View>
             <Components.CustomText
@@ -101,7 +104,7 @@ const Login = ({navigation}: StackPropsType<'Login'>) => {
             </Components.CustomText>
           </View>
           <FastImage
-            source={config.images.temp_logo_square}
+            source={config.images.ic_logo}
             resizeMode="contain"
             style={styles.logoImage}
           />

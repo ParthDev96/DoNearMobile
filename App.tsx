@@ -8,19 +8,22 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 // import RootNavigator from './src/routes/RootNavigator';
-import {StatusBar, StyleSheet} from 'react-native';
+import {Platform, StatusBar, StyleSheet} from 'react-native';
 import {PaperProvider} from 'react-native-paper';
 import Toast from 'react-native-toast-message';
 import toastConfig from './src/config/toastConfig';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-// import AppAlertDialog, {
-//   AppAlertDialogManager,
-// } from './src/components/AppAlertDialog';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/redux/store';
 import RootStackScreen from 'src/routes/stackNav';
+import KeyboardManager from 'react-native-keyboard-manager';
+
+if (Platform.OS === 'ios') {
+  KeyboardManager.setEnable(true);
+  KeyboardManager.setShouldResignOnTouchOutside(false);
+}
 
 function App(): React.JSX.Element {
   return (

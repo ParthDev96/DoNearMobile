@@ -50,6 +50,7 @@ const StackNavigator = () => {
       screenOptions={{headerShown: false}}
       initialRouteName={'Login'}>
       <Stack.Screen name="Login" component={screens.Login} />
+      <Stack.Screen name="HomeScreen" component={screens.HomeScreen} />
       {/* <Stack.Screen name="Register" component={screens.Register} />
       <Stack.Screen name="Verification" component={screens.Verification} />
       <Stack.Screen name="UpdateProfile" component={screens.UpdateProfile} />

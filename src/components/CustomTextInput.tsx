@@ -17,6 +17,8 @@ import theme from 'src/config';
 import utils from 'src/utils';
 import AnimatedButton from './AnimatedButton';
 import CustomText from './CustomText';
+import {default as Ionicons} from 'react-native-vector-icons/Ionicons';
+import config from 'src/config';
 
 type Props = {
   error?: string;
@@ -46,7 +48,6 @@ type Props = {
   customLeftView?: any;
   customRightView?: any;
   showEye?: boolean;
-  eyeImgStyle?: ImageStyle;
   eyeImageContainerStyle?: ViewStyle;
   inputFocusColor?: string;
   inputUnFocusColor?: string;
@@ -100,7 +101,6 @@ const CustomTextInput = (props: Props) => {
     customLeftView,
     customRightView,
     showEye = false,
-    eyeImgStyle,
     eyeImageContainerStyle,
     inputFocusColor,
     inputUnFocusColor,
@@ -169,7 +169,7 @@ const CustomTextInput = (props: Props) => {
                   : theme.colors.COLOR_WHITE,
                 borderColor: focusedBorderColor
                   ? focusedBorderColor
-                  : theme.colors.COLOR_PRIMARY,
+                  : theme.colors.COLOR_APP_TEXT,
               }
             : {
                 backgroundColor: inputUnFocusColor
@@ -177,7 +177,7 @@ const CustomTextInput = (props: Props) => {
                   : theme.colors.COLOR_WHITE,
                 borderColor: unFocusedBorderColor
                   ? unFocusedBorderColor
-                  : theme.colors.COLOR_PRIMARY + '50',
+                  : theme.colors.COLOR_APP_TEXT + '50',
               },
           styles.shadowContainer,
           rowContainerStyle,
@@ -297,22 +297,18 @@ const CustomTextInput = (props: Props) => {
             }
           />
         )} */}
-        {/* {showEye && (
+        {showEye && (
           <TouchableOpacity
             activeOpacity={0.6}
             onPress={() => setSecurePassword(!securePassword)}
             style={[styles.eyeBtn, eyeImageContainerStyle]}>
-            <Image
-              style={[styles.eyeImg, eyeImgStyle]}
-              source={
-                securePassword
-                  ? theme.images.ic_eye_close
-                  : theme.images.ic_eye_open
-              }
-              resizeMode={'contain'}
+            <Ionicons
+              name={!securePassword ? 'eye-off-outline' : 'eye-outline'}
+              size={utils.normalize(17)}
+              color={config.colors.COLOR_APP_TEXT}
             />
           </TouchableOpacity>
-        )} */}
+        )}
         {customRightView && customRightView()}
         {!!rightImage && (
           <AnimatedButton
@@ -346,7 +342,7 @@ const styles = StyleSheet.create({
     color: theme.colors.COLOR_APP_DARK_GRAY,
   },
   infoText: {
-    color: theme.colors.COLOR_PRIMARY,
+    color: theme.colors.COLOR_APP_TEXT,
     fontSize: utils.normalize(12),
     lineHeight: utils.normalize(15),
     marginLeft: utils.normalize(10),
@@ -405,7 +401,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: utils.normalize(50),
-    backgroundColor: theme.colors.COLOR_PRIMARY + '60',
+    backgroundColor: theme.colors.COLOR_APP_TEXT + '60',
     borderRadius: utils.normalize(25),
     borderWidth: 1,
     alignItems: 'center',
@@ -418,7 +414,7 @@ const styles = StyleSheet.create({
         }
       : {
           backgroundColor: theme.colors.COLOR_WHITE,
-          shadowColor: theme.colors.COLOR_PRIMARY + '80',
+          shadowColor: theme.colors.COLOR_APP_TEXT + '80',
           shadowOffset: {
             width: 0,
             height: 4,
@@ -430,7 +426,7 @@ const styles = StyleSheet.create({
   titleStyle: {
     fontFamily: theme.Font.NotoSansRegular,
     fontSize: utils.normalize(11),
-    color: theme.colors.COLOR_PRIMARY,
+    color: theme.colors.COLOR_APP_TEXT,
     opacity: 0.6,
     lineHeight: utils.normalize(20),
   },
@@ -439,7 +435,7 @@ const styles = StyleSheet.create({
     marginBottom: 7,
     fontSize: utils.normalize(12),
     lineHeight: utils.normalize(14),
-    color: theme.colors.COLOR_PRIMARY,
+    color: theme.colors.COLOR_APP_TEXT,
     fontFamily: theme.Font.NotoSansRegular,
   },
   secondContainer: {
@@ -447,7 +443,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: utils.normalize(70),
     borderBottomWidth: 1,
-    borderBottomColor: theme.colors.COLOR_PRIMARY + '60',
+    borderBottomColor: theme.colors.COLOR_APP_TEXT + '60',
   },
   inputStyle: {
     flex: 1,
