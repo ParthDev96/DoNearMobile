@@ -7,7 +7,14 @@ export type RootNavPropsType = {
   Login: {};
   Register: {};
   HomeScreen: {};
-
+  DonateScreen: {};
+  VolunteerScreen: {};
+  NGOScreen: {};
+  ProfileScreen: {};
+  HomeStack: {};
+  VolunteerStack: {};
+  NgoStack: {};
+  ProfileStack: {};
   TabStack: NavigatorScreenParams<any>;
 };
 

@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 // import AppImageViewer from 'app/screens/common/AppImageViewer';
 import screens from 'src/screens';
+import BottomTabNavigator from './bottomNav';
 // import {useAppSelector} from 'src/redux/store';
 
 const Stack = createNativeStackNavigator<RootNavPropsType>();
@@ -50,13 +51,12 @@ const StackNavigator = () => {
       screenOptions={{headerShown: false}}
       initialRouteName={'Login'}>
       <Stack.Screen name="Login" component={screens.Login} />
-      <Stack.Screen name="HomeScreen" component={screens.HomeScreen} />
+      <Stack.Screen name="TabStack" component={BottomTabNavigator} />
       {/* <Stack.Screen name="Register" component={screens.Register} />
       <Stack.Screen name="Verification" component={screens.Verification} />
       <Stack.Screen name="UpdateProfile" component={screens.UpdateProfile} />
       <Stack.Screen name="Favourites" component={screens.Favourites} />
       <Stack.Screen name="ChangePassword" component={screens.ChangePassword} />
-      <Stack.Screen name="TabStack" component={BottomTabNavigator} />
       <Stack.Screen name="ProductDetails" component={screens.ProductDetails} />
       <Stack.Screen name="AddressList" component={screens.AddressList} />
       <Stack.Screen name="AddAddress" component={screens.AddAddress} />

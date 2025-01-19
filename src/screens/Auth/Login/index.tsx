@@ -55,7 +55,7 @@ const Login = ({navigation}: StackPropsType<'Login'>) => {
     Keyboard.dismiss();
     navigation.reset({
       index: 0,
-      routes: [{name: 'HomeScreen'}],
+      routes: [{name: 'TabStack'}],
     });
     // const payload: any = {
     //   email: emailText,

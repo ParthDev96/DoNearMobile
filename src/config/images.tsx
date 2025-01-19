@@ -3,6 +3,17 @@ export default {
   ic_package_placeholder: require('../assets/images/ic_package_placeholder.png'),
   ic_cart_empty: require('../assets/images/ic_cart_empty.png'),
 
+  // tabs
+  ic_home: require('../assets/images/ic_home.png'),
+  ic_home_filled: require('../assets/images/ic_home_filled.png'),
+  ic_volunteer: require('../assets/images/ic_volunteer.png'),
+  ic_volunteer_filled: require('../assets/images/ic_volunteer_filled.png'),
+  ic_ngo: require('../assets/images/ic_ngo.png'),
+  ic_ngo_filled: require('../assets/images/ic_ngo_filled.png'),
+  ic_user_filled: require('../assets/images/ic_user_filled.png'),
+  ic_user: require('../assets/images/ic_user.png'),
+  ic_donate: require('../assets/images/ic_donate.png'),
+
   // categories
   ic_cloths: require('../assets/images/ic_cloths.png'),
   ic_electronic: require('../assets/images/ic_electronic.png'),

@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: config.colors.COLOR_LIGHT_GREEN,
+    backgroundColor: config.colors.COLOR_PRIMARY,
     borderRadius: 25,
   },
   shadowContainer:
