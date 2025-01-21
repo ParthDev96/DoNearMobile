@@ -52,7 +52,8 @@ const StackNavigator = () => {
       initialRouteName={'Login'}>
       <Stack.Screen name="Login" component={screens.Login} />
       <Stack.Screen name="TabStack" component={BottomTabNavigator} />
-      {/* <Stack.Screen name="Register" component={screens.Register} />
+      <Stack.Screen name="Signup" component={screens.Signup} />
+      {/* 
       <Stack.Screen name="Verification" component={screens.Verification} />
       <Stack.Screen name="UpdateProfile" component={screens.UpdateProfile} />
       <Stack.Screen name="Favourites" component={screens.Favourites} />

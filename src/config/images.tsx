@@ -2,6 +2,8 @@ export default {
   ic_logo: require('../assets/images/ic_logo.png'),
   ic_package_placeholder: require('../assets/images/ic_package_placeholder.png'),
   ic_cart_empty: require('../assets/images/ic_cart_empty.png'),
+  ic_lock: require('../assets/images/ic_lock.png'),
+  ic_email: require('../assets/images/ic_email.png'),
 
   // tabs
   ic_home: require('../assets/images/ic_home.png'),

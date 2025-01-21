@@ -39,7 +39,7 @@ export default CustomText;
 const styles = StyleSheet.create({
   text: {
     fontSize: utils.normalize(12),
-    fontFamily: theme.Font.NotoSansBold,
+    fontFamily: theme.font.NotoSansBold,
     color: theme.colors.COLOR_BLACK,
     lineHeight: utils.normalize(18),
   },

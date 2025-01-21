@@ -9,13 +9,13 @@ export default StyleSheet.create({
   },
   centerContainer: {
     backgroundColor: config.colors.COLOR_APP_TEXT + '20',
-    width: config.ConstantVariables.DYNAMIC_COMPONENTS_WIDTH,
+    width: config.ConstantVariables.DYNAMIC_SCREEN_WIDTH,
     alignSelf: 'center',
     borderRadius: utils.normalize(10),
     paddingVertical: utils.normalize(25),
   },
   privacyText1: {
-    fontFamily: config.Font.NotoSansRegular,
+    fontFamily: config.font.NotoSansRegular,
     marginTop: utils.normalize(15),
     fontSize: utils.normalize(13),
     color: config.colors.COLOR_APP_TEXT,
@@ -23,7 +23,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   privacyText2: {
-    fontFamily: config.Font.NotoSansBold,
+    fontFamily: config.font.NotoSansBold,
     marginTop: utils.normalize(25),
     fontSize: utils.normalize(13),
     color: config.colors.COLOR_APP_TEXT,
@@ -40,7 +40,7 @@ export default StyleSheet.create({
     borderRadius: utils.normalize(30),
   },
   forgotPasswordText: {
-    fontFamily: config.Font.NotoSansBold,
+    fontFamily: config.font.NotoSansBold,
     fontSize: utils.normalize(15),
     lineHeight: utils.normalize(30),
     color: config.colors.COLOR_APP_TEXT,
@@ -81,43 +81,38 @@ export default StyleSheet.create({
 
   stillNotRegisterText: {
     alignSelf: 'center',
-    fontFamily: config.Font.NotoSansMedium,
+    fontFamily: config.font.NotoSansMedium,
     marginTop: utils.normalize(25),
     marginBottom: utils.normalize(40),
     fontSize: utils.normalize(15),
     color: config.colors.COLOR_APP_TEXT,
   },
   welcomeBackText: {
-    fontFamily: config.Font.NotoSansBold,
+    fontFamily: config.font.NotoSansBold,
     fontSize: utils.normalize(21),
     lineHeight: utils.normalize(30),
     color: config.colors.COLOR_APP_TEXT,
   },
   signInText: {
-    fontFamily: config.Font.NotoSansMedium,
+    fontFamily: config.font.NotoSansMedium,
     fontSize: utils.normalize(15),
     lineHeight: utils.normalize(18),
     color: config.colors.COLOR_APP_TEXT,
   },
   registerText: {
-    fontFamily: config.Font.NotoSansBold,
+    fontFamily: config.font.NotoSansBold,
     lineHeight: utils.normalize(16),
     color: config.colors.COLOR_BLACK,
     fontSize: utils.normalize(14),
     textDecorationLine: 'underline',
   },
-  loginButton: {
-    width: config.ConstantVariables.DYNAMIC_COMPONENTS_WIDTH,
-    alignSelf: 'center',
-    marginTop: utils.normalize(25),
-  },
   inputContainer: {
-    marginHorizontal: utils.normalize(25),
+    marginHorizontal: utils.normalize(20),
     alignSelf: 'center',
   },
   passwordInputContainer: {
     marginTop: utils.normalize(20),
-    marginHorizontal: utils.normalize(25),
+    marginHorizontal: utils.normalize(20),
     alignSelf: 'center',
   },
   logoImage: {
@@ -132,7 +127,7 @@ export default StyleSheet.create({
     bottom: utils.normalize(35),
   },
   logoImageMainContainer: {
-    width: config.ConstantVariables.DYNAMIC_COMPONENTS_WIDTH,
+    width: config.ConstantVariables.DYNAMIC_SCREEN_WIDTH,
     alignSelf: 'center',
     margin: utils.normalize(20),
     justifyContent: 'space-between',
@@ -164,7 +159,7 @@ export default StyleSheet.create({
   loginTitle: {
     fontSize: utils.normalize(18),
     lineHeight: utils.normalize(25),
-    fontFamily: config.Font.NotoSansBold,
+    fontFamily: config.font.NotoSansBold,
     textAlign: 'center',
     marginTop: utils.dimension.isPad
       ? utils.normalize(80)

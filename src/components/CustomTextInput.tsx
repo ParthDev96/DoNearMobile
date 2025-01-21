@@ -424,7 +424,7 @@ const styles = StyleSheet.create({
           zIndex: 100,
         },
   titleStyle: {
-    fontFamily: theme.Font.NotoSansRegular,
+    fontFamily: theme.font.NotoSansRegular,
     fontSize: utils.normalize(11),
     color: theme.colors.COLOR_APP_TEXT,
     opacity: 0.6,
@@ -436,7 +436,7 @@ const styles = StyleSheet.create({
     fontSize: utils.normalize(12),
     lineHeight: utils.normalize(14),
     color: theme.colors.COLOR_APP_TEXT,
-    fontFamily: theme.Font.NotoSansRegular,
+    fontFamily: theme.font.NotoSansRegular,
   },
   secondContainer: {
     flexDirection: 'row',
@@ -448,7 +448,7 @@ const styles = StyleSheet.create({
   inputStyle: {
     flex: 1,
     fontSize: utils.normalize(14),
-    fontFamily: theme.Font.NotoSansRegular,
+    fontFamily: theme.font.NotoSansRegular,
     lineHeight: utils.normalize(18),
     paddingVertical: 0,
     paddingHorizontal: utils.normalize(15),

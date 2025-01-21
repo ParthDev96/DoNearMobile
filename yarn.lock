@@ -2065,19 +2065,29 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
-"@react-native-firebase/app@^21.6.2":
-  version "21.6.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-21.6.2.tgz#814574d02a14e767569469263d87fda9051ea799"
-  integrity sha512-yNEzADATa565Nfp1EoWdUgxUw9myCk+u0dblTOu0WQcWddBxug7zEhdvol0k2vkRlEuyLb0biTt7oUy72kKJpw==
+"@react-native-firebase/app@^21.7.1":
+  version "21.7.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-21.7.1.tgz#649db81616cbf474eff8b4fbbf0d8980360d771b"
+  integrity sha512-sBXKJE+Uu2+G8SBQzUXMEIyWK932GqxfKsCAVOfzEegxknQuQ8l6qx/tIbMeEFuBJlo334GNctMa4ehePog5lQ==
   dependencies:
     firebase "10.13.2"
 
-"@react-native-firebase/auth@^21.6.2":
-  version "21.6.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-21.6.2.tgz#b7cc5d162c0ffe466a6e4c9cb550474fb1488a60"
-  integrity sha512-/U8V7B063ShawbEomgq9fzl8mk4eJfWP+f3rxRrIjVAl6AQTIWBbLZ2qFThQpmD5X5YKHX2z1NnZ+DVNVQHDjA==
+"@react-native-firebase/auth@^21.7.1":
+  version "21.7.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-21.7.1.tgz#54791f6c3f9504dd8550d16feacb0fce6575337b"
+  integrity sha512-aJ7e2xZvEupOsTk4dM8XwQUErJOn9NzA9ghCTN8ypkLAyOguGOdt/WSIQxAn/8o8xxPd5XSPyVkGDEvlhpIgDw==
   dependencies:
     plist "^3.1.0"
+
+"@react-native-firebase/firestore@^21.7.1":
+  version "21.7.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-21.7.1.tgz#69292bfdfdfa8ec48a04718fe57227571146e875"
+  integrity sha512-tW1nfya6q/OK0KvQv3/6dJlyeagPoWWGKIvAhPDxjun33ZvCPPsKDJdRkSluaE6cszsCa2IP7srg56FespaWJA==
+
+"@react-native-firebase/storage@^21.7.1":
+  version "21.7.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-21.7.1.tgz#4a96970e84b510c02b4e2020cf8f76ee90f9a3e4"
+  integrity sha512-37l/agWMp/cxtRnxYvx1NaVxVzhHAx89PaWHlx3Wv5lby0Azh3/7csxyRKVKhID44rKCXbf0sH+iAkr+phdjBw==
 
 "@react-native-masked-view/masked-view@^0.3.2":
   version "0.3.2"
@@ -2467,6 +2477,11 @@
   version "15.7.14"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.14.tgz#1433419d73b2a7ebfc6918dcefd2ec0d5cd698f2"
   integrity sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==
+
+"@types/react-native-extra-dimensions-android@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@types/react-native-extra-dimensions-android/-/react-native-extra-dimensions-android-1.2.3.tgz#d8724fc96689929ce000e83d20989cedcedcc526"
+  integrity sha512-g+Jkc+idhsqzUMWQZlcj132CUKdw/KG+NuGEoRAsWUwQDRVCnY/H4n0xdGxwf7GSdlSuoyjqb8ps7/quHihmRA==
 
 "@types/react-native-vector-icons@^6.4.18":
   version "6.4.18"
@@ -6516,6 +6531,11 @@ react-native-dotenv@^3.4.11:
   integrity sha512-6vnIE+WHABSeHCaYP6l3O1BOEhWxKH6nHAdV7n/wKn/sciZ64zPPp2NUdEUf1m7g4uuzlLbjgr+6uDt89q2DOg==
   dependencies:
     dotenv "^16.4.5"
+
+react-native-extra-dimensions-android@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/react-native-extra-dimensions-android/-/react-native-extra-dimensions-android-1.2.5.tgz#8ade91029aaac7519bf305116d39019e618a60f0"
+  integrity sha512-eorFo9X1vEqAWUkgcZ300yKBG1wtgNeE7tdWAH2CE+P50FGTniJg5Sr6l1iPWG8ZskQOuF+KeiSTFlDa4vLfMw==
 
 react-native-fast-image@^8.6.3:
   version "8.6.3"

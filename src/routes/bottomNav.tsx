@@ -197,8 +197,8 @@ function MyTabBar({state, navigation}: MaterialTopTabBarProps) {
                       ? theme.colors.COLOR_APP_TEXT
                       : theme.colors.COLOR_APP_LIGHT_GRAY,
                     fontFamily: isFocused
-                      ? theme.Font.NotoSansBold
-                      : theme.Font.NotoSansRegular,
+                      ? theme.font.NotoSansBold
+                      : theme.font.NotoSansRegular,
                   },
                 ]}>
                 {ITEM_TITLES[index]}
