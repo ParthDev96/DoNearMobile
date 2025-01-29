@@ -15,6 +15,7 @@ export default {
   ic_user_filled: require('../assets/images/ic_user_filled.png'),
   ic_user: require('../assets/images/ic_user.png'),
   ic_donate: require('../assets/images/ic_donate.png'),
+  ic_phone: require('../assets/images/ic_phone.png'),
 
   // categories
   ic_cloths: require('../assets/images/ic_cloths.png'),

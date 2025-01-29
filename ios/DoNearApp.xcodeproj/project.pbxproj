@@ -19,7 +19,6 @@
 		62230563CE7A4EFE814E8AA3 /* NotoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71A463F8977C47ECB3ADEF02 /* NotoSans-Black.ttf */; };
 		66D9A03A75B8F50DFA2E4F46 /* Pods_DoNearApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD54622D350B5633D9CAEF3 /* Pods_DoNearApp.framework */; };
 		7693F29AD9B34DC596C44A6C /* NotoSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B30AD963604DCF9EBA8FF7 /* NotoSans-Thin.ttf */; };
-		79801AFB3DD6DD74A6532B05 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		803176785B044429AEC467D3 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 460E456CB65746A3A7A554A5 /* NotoSans-Bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B2F445592D2ED6EF00633B1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2F445582D2ED6EF00633B1F /* GoogleService-Info.plist */; };
@@ -291,7 +290,6 @@
 				3EBD5021BAB34DC7B07A5174 /* NotoSans-Regular.ttf in Resources */,
 				2446F2A4662744AEAE8E1937 /* NotoSans-SemiBold.ttf in Resources */,
 				7693F29AD9B34DC596C44A6C /* NotoSans-Thin.ttf in Resources */,
-				79801AFB3DD6DD74A6532B05 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +528,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DoNearApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DoNear;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,6 +556,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = DoNearApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DoNear;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -655,10 +655,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -738,10 +735,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

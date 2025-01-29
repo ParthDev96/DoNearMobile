@@ -230,7 +230,7 @@ const Signup = ({navigation}: StackPropsType<'Signup'>) => {
         {t('AlreadyHaveAnAccount') + ' '}
         <Components.CustomText
           onPress={() => {
-            navigation.navigate('Login', {});
+            navigation.popTo('Login', {});
           }}
           style={styles.registerText}>
           {t('LOGIN')}

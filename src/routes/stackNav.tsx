@@ -53,9 +53,9 @@ const StackNavigator = () => {
       <Stack.Screen name="Login" component={screens.Login} />
       <Stack.Screen name="TabStack" component={BottomTabNavigator} />
       <Stack.Screen name="Signup" component={screens.Signup} />
+      <Stack.Screen name="UpdateProfile" component={screens.UpdateProfile} />
       {/* 
       <Stack.Screen name="Verification" component={screens.Verification} />
-      <Stack.Screen name="UpdateProfile" component={screens.UpdateProfile} />
       <Stack.Screen name="Favourites" component={screens.Favourites} />
       <Stack.Screen name="ChangePassword" component={screens.ChangePassword} />
       <Stack.Screen name="ProductDetails" component={screens.ProductDetails} />

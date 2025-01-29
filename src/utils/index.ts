@@ -1,3 +1,6 @@
+import checkPermission, {
+  showPermissionSettingPopup,
+} from './checkPermissionResult';
 import Dimen from './Dimen';
 import dimension from './dimension';
 import extraDimension from './extraDimension';
@@ -8,4 +11,6 @@ export default {
   normalize,
   dimension,
   extraDimension,
+  checkPermission,
+  showPermissionSettingPopup,
 };

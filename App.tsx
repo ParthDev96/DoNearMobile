@@ -20,6 +20,8 @@ import {persistor, store} from './src/redux/store';
 import RootStackScreen from 'src/routes/stackNav';
 import KeyboardManager from 'react-native-keyboard-manager';
 import AppLoaderModal from 'src/components/AppLoader/AppLoaderModal';
+import AppPopupModal from 'src/components/AppPopup/AppPopupModal';
+import AppMediaOptionsModal from 'src/components/AppMediaOptions/AppMediaOptions';
 
 if (Platform.OS === 'ios') {
   KeyboardManager.setEnable(true);
@@ -40,7 +42,9 @@ function App(): React.JSX.Element {
                   backgroundColor="transparent"
                 />
                 <RootStackScreen />
+                <AppPopupModal />
                 <AppLoaderModal />
+                <AppMediaOptionsModal />
               </PaperProvider>
               <Toast config={toastConfig} />
               {/* <AppAlertDialog

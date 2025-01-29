@@ -5,6 +5,7 @@ import NGOScreen from './Tabs/NGOScreen';
 import ProfileScreen from './Tabs/ProfileScreen';
 import VolunteerScreen from './Tabs/VolunteerScreen';
 import Signup from './Auth/Signup';
+import UpdateProfile from './Auth/UpdateProfile';
 
 export default {
   Login,
@@ -14,4 +15,5 @@ export default {
   NGOScreen,
   ProfileScreen,
   Signup,
+  UpdateProfile,
 };

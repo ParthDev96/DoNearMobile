@@ -1386,6 +1386,7 @@ PODS:
     - React-RCTText (= 0.76.5)
     - React-RCTVibration (= 0.76.5)
   - React-callinvoker (0.76.5)
+  - React-Codegen (0.1.0)
   - React-Core (0.76.5):
     - glog
     - hermes-engine
@@ -2627,6 +2628,28 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-image-resizer (3.0.11):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-pager-view (6.6.1):
     - DoubleConversion
     - glog
@@ -3325,6 +3348,7 @@ DEPENDENCIES:
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-date-picker (from `../node_modules/react-native-date-picker`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - "react-native-image-resizer (from `../node_modules/@bam.tech/react-native-image-resizer`)"
   - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
@@ -3395,6 +3419,7 @@ SPEC REPOS:
     - leveldb-library
     - libwebp
     - nanopb
+    - React-Codegen
     - RecaptchaInterop
     - SDWebImage
     - SDWebImageWebPCoder
@@ -3479,6 +3504,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-date-picker"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
+  react-native-image-resizer:
+    :path: "../node_modules/@bam.tech/react-native-image-resizer"
   react-native-pager-view:
     :path: "../node_modules/react-native-pager-view"
   react-native-safe-area-context:
@@ -3607,6 +3634,7 @@ SPEC CHECKSUMS:
   RCTTypeSafety: e9a6e7d48184646eb0610295b74c0dd02768cbb2
   React: fffb3cf1b0d7aee03c4eb4952b2d58783615e9fa
   React-callinvoker: 3c6ecc0315d42924e01b3ddc25cf2e49d33da169
+  React-Codegen: 4b8b4817cea7a54b83851d4c1f91f79aa73de30a
   React-Core: d2143ba58d0c8563cf397f96f699c6069eba951c
   React-CoreModules: b3cbc5e3090a8c23116c0c7dd8998e0637e29619
   React-cxxreact: 68fb9193582c4a411ce99d0b23f7b3d8da1c2e4a
@@ -3632,6 +3660,7 @@ SPEC CHECKSUMS:
   React-microtasksnativemodule: 8d918db5d7c4526de2a0a4692d878a21b338c3f0
   react-native-date-picker: ce13cdf5cdfcd729025022c8d3b6f4fa547a754f
   react-native-image-picker: 8d06080ecb33269e77e0728f1fd8a16f2f5aad07
+  react-native-image-resizer: a2c220950f240cfe60f1fb23399ec3ee0db438ae
   react-native-pager-view: d43f2637dd5952c1486b9baf2d8f9bb3dd83c46f
   react-native-safe-area-context: e0625eb857b816dff4aca46e125759cb0927e225
   React-nativeconfig: 565ebf4340d9ede95b523f0e3640f48286985ef5

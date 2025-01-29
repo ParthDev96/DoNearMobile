@@ -191,7 +191,7 @@ const Login = ({navigation}: StackPropsType<'Login'>) => {
         {t('StillNotRegistered') + ' '}
         <Components.CustomText
           onPress={() => {
-            navigation.navigate('Signup', {});
+            navigation.popTo('Signup', {});
           }}
           style={styles.registerText}>
           {t('Register')}

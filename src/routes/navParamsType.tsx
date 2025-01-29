@@ -16,6 +16,7 @@ export type RootNavPropsType = {
   NgoStack: {};
   ProfileStack: {};
   TabStack: NavigatorScreenParams<any>;
+  UpdateProfile: {isEdit?: boolean};
 };
 
 // this line pass navigation and route props for each stack screen
