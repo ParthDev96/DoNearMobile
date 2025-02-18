@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
   },
   commonTabBarStyle: {
     position: 'absolute',
-    width: '100%',
+    width: config.ConstantVariables.DYNAMIC_TAB_WIDTH,
     alignSelf: 'center',
     zIndex: 100,
     backgroundColor: config.colors.COLOR_WHITE,

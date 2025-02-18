@@ -108,7 +108,7 @@ const CollectProductItemComponent = (props: Props) => {
               style={styles.collectContainer}>
               <Icon
                 name="cart-plus"
-                size={20}
+                size={utils.normalize(20)}
                 color={config.colors.COLOR_BLACK}
               />
             </TouchableOpacity>
