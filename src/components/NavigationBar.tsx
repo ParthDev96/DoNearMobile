@@ -30,7 +30,6 @@ type Props = {
   showNotification?: boolean;
   backBtnContainer?: ViewStyle;
   backBtnImageStyle?: ImageStyle;
-  showCenterLogo?: boolean;
   safeAreaViewStyle?: ViewStyle;
   mainContainerStyle?: ViewStyle;
   leftImage?: any;
@@ -182,7 +181,7 @@ const styles = StyleSheet.create({
   },
 
   mainContainerStyle: {
-    zIndex: 100,
+    zIndex: 1000,
   },
   image: {
     height: utils.normalize(23),
@@ -216,8 +215,10 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: utils.normalize(50),
+    paddingHorizontal: utils.normalize(15),
     flexDirection: 'row',
     alignItems: 'center',
+    zIndex: 1000,
   },
   shadowContainer:
     Platform.OS === 'android'
@@ -243,13 +244,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   backBtnContainer: {
-    width: utils.normalize(45),
+    width: utils.normalize(35),
     height: utils.normalize(45),
     borderRadius: utils.normalize(45),
-    alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: utils.normalize(10),
-    marginRight: utils.normalize(5),
   },
   noBackBtnContainer: {
     width: utils.normalize(25),

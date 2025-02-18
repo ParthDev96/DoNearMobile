@@ -158,7 +158,7 @@ function MyTabBar({state, navigation}: MaterialTopTabBarProps) {
       style={[
         styles.commonTabBarStyle,
         {
-          paddingBottom: insets.bottom,
+          paddingBottom: insets.bottom + utils.normalize(10),
         },
       ]}>
       <View
@@ -229,9 +229,6 @@ const styles = StyleSheet.create({
     height: utils.normalize(70),
     width: utils.normalize(70),
     borderRadius: utils.normalize(30),
-    borderWidth: utils.normalize(2),
-    borderColor: config.colors.COLOR_WHITE,
-    // backgroundColor: config.colors.COLOR_WHITE,
     alignSelf: 'center',
     top: utils.normalize(-30),
     justifyContent: 'center',
