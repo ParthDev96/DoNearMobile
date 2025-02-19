@@ -15,7 +15,7 @@ import CustomText from './CustomText';
 import LinearGradient from 'react-native-linear-gradient';
 import utils from 'src/utils';
 import config from 'src/config';
-import {default as Ionicons} from 'react-native-vector-icons/Ionicons';
+import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome';
 
 type Props = {
   showBack?: boolean;
@@ -109,9 +109,9 @@ const NavigationBar = (props: Props) => {
             activeOpacity={0.7}
             onPress={() => onBackPress()}
             style={[styles.backBtnContainer, backBtnContainer]}>
-            <Ionicons
-              name={'chevron-back'}
-              size={utils.normalize(17)}
+            <FontAwesome
+              name={'angle-left'}
+              size={utils.normalize(25)}
               color={config.colors.COLOR_APP_TEXT}
             />
             {/* <Image

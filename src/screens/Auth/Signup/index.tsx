@@ -1,7 +1,6 @@
 import React, {useCallback, useRef, useState} from 'react';
 import {View, Keyboard, ScrollView, TextInput} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {StackPropsType} from 'src/routes/navParamsType';
 import validations from 'src/utils/validations';
 import AppLoader from 'src/components/AppLoader/AppLoaderManager';
 import styles from './styles';
@@ -10,6 +9,7 @@ import config from 'src/config';
 import {useTranslation} from 'react-i18next';
 import FastImage from 'react-native-fast-image';
 import utils from 'src/utils';
+import {StackPropsType} from 'src/types/navigation';
 
 const Signup = ({navigation}: StackPropsType<'Signup'>) => {
   const {t} = useTranslation();

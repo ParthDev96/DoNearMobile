@@ -208,10 +208,10 @@ const styles = StyleSheet.create({
     marginTop: utils.normalize(5),
   },
   message: {
-    fontSize: utils.normalize(15),
+    fontSize: utils.normalize(14),
     lineHeight: utils.normalize(20),
-    marginTop: utils.normalize(10),
-    fontFamily: config.font.NotoSansMedium,
+    marginTop: utils.normalize(15),
+    fontFamily: config.font.NotoSansRegular,
     textAlign: 'center',
   },
   buttonContainer: {

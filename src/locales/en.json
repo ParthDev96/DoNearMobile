@@ -138,5 +138,23 @@
   "PleaseEnterPostalCode": "Please enter postal code",
   "Donate": "Donate",
   "Volunteer": "Volunteer",
-  "NGO": "NGO"
+  "NGO": "NGO",
+  "Collect": "Collect",
+  "Close": "Close",
+  "Ok": "Ok",
+  "Yes": "Yes",
+  "No": "No",
+  "AddProduct": "Add Product",
+  "SelectImage": "Add Image",
+  "Title": "Title",
+  "ProductCondition": "Product Condition",
+  "Products": "Products",
+  "MyProducts": "My Products",
+  "Category": "Category",
+  "CollectProduct": "Collect Product",
+  "CollectProductMessage": "Are you sure you want to collect {{title}} product?",
+  "ExpiryDate": "Expiry date",
+
+  "ProductAddedToTheCart": "Product added to the cart",
+  "ProductCollectedSuccessully": "Product collected successully"
 }

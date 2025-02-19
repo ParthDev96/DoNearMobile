@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {HomeScreenNavigationProps} from '../../../types/navigation';
+import {StackPropsType} from '../../../types/navigation';
 import styles from './styles';
 import {PRODUCT} from 'src/types/Products';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -11,7 +11,7 @@ import Toast from 'react-native-toast-message';
 import utils from 'src/utils';
 import config from 'src/config';
 
-const HomeScreen = ({navigation}: HomeScreenNavigationProps) => {
+const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
   const [data, setData] = useState<PRODUCT[]>([]);
   const insets = useSafeAreaInsets();
 
@@ -51,7 +51,7 @@ const HomeScreen = ({navigation}: HomeScreenNavigationProps) => {
       return (
         <CollectProductItemComponent
           onPressItem={() => {
-            navigation.navigate('ProductDetailsScreen', {
+            navigation.navigate('ProductDetails', {
               product: item,
               isCollect: true,
             });

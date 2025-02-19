@@ -153,8 +153,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     height: utils.normalize(50),
-    borderColor: config.colors.COLOR_APP_BROWN + '30',
-    borderWidth: utils.normalize(1),
+    // borderColor: config.colors.COLOR_APP_BROWN + '30',
+    // borderWidth: utils.normalize(1),
   },
   text: {
     fontFamily: config.font.NotoSansBold,

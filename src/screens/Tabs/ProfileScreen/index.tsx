@@ -7,13 +7,13 @@ import {default as IconEntypo} from 'react-native-vector-icons/Entypo';
 import {default as IconAntDesign} from 'react-native-vector-icons/AntDesign';
 import {default as IconFontAwesome} from 'react-native-vector-icons/FontAwesome';
 import {default as IconMaterialIcons} from 'react-native-vector-icons/MaterialIcons';
-import {StackPropsType} from 'src/routes/navParamsType';
 import utils from 'src/utils';
 import config from 'src/config';
 import AppPopup from 'src/components/AppPopup/AppPopup';
 import AppLoader from 'src/components/AppLoader/AppLoaderManager';
 import Components from 'src/components';
 import ProgressiveImage from 'src/components/ProgressiveImage';
+import {StackPropsType} from 'src/types/navigation';
 
 type IOptions = {
   id: number;

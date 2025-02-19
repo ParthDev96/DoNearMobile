@@ -9,7 +9,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import FastImage from 'react-native-fast-image';
 // import {useAppDispatch} from 'src/redux/store';
 import validations from 'src/utils/validations';
-import {StackPropsType} from 'src/routes/navParamsType';
+import {StackPropsType} from 'src/types/navigation';
 
 const Login = ({navigation}: StackPropsType<'Login'>) => {
   const {t} = useTranslation();

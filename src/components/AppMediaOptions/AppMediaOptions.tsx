@@ -101,13 +101,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   submitButtonStyle: {
-    height: 45,
+    height: utils.normalize(45),
   },
   cameraButtonStyle: {
-    height: 45,
+    height: utils.normalize(45),
   },
   cancelButtonStyle: {
-    height: 45,
+    height: utils.normalize(45),
     backgroundColor: config.colors.COLOR_WHITE,
     borderWidth: 0,
     borderColor: config.colors.COLOR_APP_DARK_GRAY,
@@ -116,20 +116,20 @@ const styles = StyleSheet.create({
   modalView: {
     backgroundColor: 'white',
     borderRadius: 10,
-    padding: 20,
+    padding: utils.normalize(20),
     alignSelf: 'center',
     width: '100%',
   },
   message: {
-    fontSize: 15,
-    lineHeight: 20,
-    marginBottom: 20,
+    fontSize: utils.normalize(15),
+    lineHeight: utils.normalize(20),
+    marginBottom: utils.normalize(20),
     fontFamily: config.font.NotoSansMedium,
     textAlign: 'center',
     color: config.colors.COLOR_APP_DARK_GRAY,
   },
   galleryButton: {
-    marginTop: 20,
+    marginTop: utils.normalize(20),
   },
   submitButtonText: {},
   cancelButtonText: {

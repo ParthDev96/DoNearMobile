@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import React, {useCallback, useRef} from 'react';
 import theme from '../config';
-import {RootNavPropsType} from './navParamsType';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useTranslation} from 'react-i18next';
 import {
@@ -24,9 +23,10 @@ import screens from 'src/screens';
 import utils from 'src/utils';
 import Components from 'src/components';
 import FastImage from 'react-native-fast-image';
+import RootStackParamList from 'src/types/navigation';
 
-const Tab = createMaterialTopTabNavigator<RootNavPropsType>();
-const Stack = createNativeStackNavigator<RootNavPropsType>();
+const Tab = createMaterialTopTabNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const BottomTabNavigator = () => {
   const renderCustomTab = useCallback((props: MaterialTopTabBarProps) => {

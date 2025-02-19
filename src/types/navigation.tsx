@@ -1,11 +1,29 @@
+import {NavigatorScreenParams} from '@react-navigation/native';
 import {PRODUCT} from './Products';
-import {StackScreenProps} from '@react-navigation/stack';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+// this line pass navigation and route props for each stack screen
+export type StackPropsType<T extends keyof RootStackParamList> =
+  NativeStackScreenProps<RootStackParamList, T>;
 
 type RootStackParamList = {
+  Splash: {};
+  Login: {};
+  Signup: {};
+  DonateScreen: {};
+  VolunteerScreen: {};
+  ProfileScreen: {};
+  HomeStack: {};
+  VolunteerStack: {};
+  NgoStack: {};
+  ProfileStack: {};
+  TabStack: NavigatorScreenParams<any>;
+  UpdateProfile: {isEdit?: boolean};
   HomeScreen: {};
+  NGOScreen: {};
   AddProductScreen: {};
   DonateProductListScreen: {};
-  ProductDetailsScreen: {
+  ProductDetails: {
     product: PRODUCT;
     isCollect?: boolean;
   };
@@ -15,36 +33,3 @@ type RootStackParamList = {
 };
 
 export default RootStackParamList;
-
-export type HomeScreenNavigationProps = StackScreenProps<
-  RootStackParamList,
-  'HomeScreen'
->;
-
-export type CartScreenNavigationProps = StackScreenProps<
-  RootStackParamList,
-  'CartScreen'
->;
-
-export type AddProductNavigationProps = StackScreenProps<
-  RootStackParamList,
-  'AddProductScreen'
->;
-
-export type SelectCategoryNavigationProps = StackScreenProps<
-  RootStackParamList,
-  'SelectCategory'
->;
-
-export type CollectProductListNavigationProps = StackScreenProps<
-  RootStackParamList,
-  'CollectProductListScreen'
->;
-export type ProductDetailsScreenNavigationProps = StackScreenProps<
-  RootStackParamList,
-  'ProductDetailsScreen'
->;
-export type DonateProductListNavigationProps = StackScreenProps<
-  RootStackParamList,
-  'DonateProductListScreen'
->;

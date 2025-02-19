@@ -10,6 +10,7 @@ import {PRODUCT} from '../../types/Products';
 import config from '../../config';
 import Components from '..';
 import LinearGradient from 'react-native-linear-gradient';
+import {useTranslation} from 'react-i18next';
 
 interface Props {
   item: PRODUCT;
@@ -18,6 +19,7 @@ interface Props {
   onPressCollect?: () => void;
 }
 const DonateProductItemComponent = (props: Props) => {
+  const {t} = useTranslation();
   const {item, onPressItem, onPressCollect} = props;
 
   const renderImage = useMemo(() => {
@@ -56,11 +58,11 @@ const DonateProductItemComponent = (props: Props) => {
         {item.description}
       </Components.CustomText>
       {onPressCollect && (
-        <Components.TouchableComponent
-          text={config.strings.Collect}
-          onPress={onPressCollect}
-          style={styles.collectButtonStyle}
+        <Components.AppButton
           textStyle={styles.collectTextStyle}
+          containerStyle={styles.collectButtonStyle}
+          text={t('Collect')}
+          onPress={onPressCollect}
         />
       )}
     </TouchableOpacity>

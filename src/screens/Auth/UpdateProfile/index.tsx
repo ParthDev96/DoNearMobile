@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native-gesture-handler';
-import {StackPropsType} from 'src/routes/navParamsType';
 import useSelectImage from 'src/hooks/useSelectImage';
 // import {useAppDispatch} from 'src/redux/store';
 import AppLoader from 'src/components/AppLoader/AppLoaderManager';
@@ -21,6 +20,7 @@ import config from 'src/config';
 import ProgressiveImage from 'src/components/ProgressiveImage';
 import {default as Feather} from 'react-native-vector-icons/Feather';
 import utils from 'src/utils';
+import {StackPropsType} from 'src/types/navigation';
 
 const UpdateProfile = ({
   navigation,

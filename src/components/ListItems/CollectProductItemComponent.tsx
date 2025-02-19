@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useRef} from 'react';
+import React, {useCallback, useMemo} from 'react';
 import {
   Image,
   Platform,
@@ -14,6 +14,7 @@ import utils from '../../utils';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import {getProductCondtionFromRandomNumber} from '../../utils/StaticData';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {runOnJS, useSharedValue} from 'react-native-reanimated';
 
 interface Props {
   item: PRODUCT;
@@ -24,7 +25,7 @@ interface Props {
 
 const CollectProductItemComponent = (props: Props) => {
   const {item, onPressItem, onPressCollect} = props;
-  const addToCartTapped = useRef<boolean>(false);
+  const addToCartTapped = useSharedValue(false);
 
   const renderImage = useMemo(() => {
     var conditionBGColor = config.colors.COLOR_PRIMARY;
@@ -64,12 +65,11 @@ const CollectProductItemComponent = (props: Props) => {
   const singleTap = Gesture.Tap()
     .maxDuration(150)
     .onStart(() => {
-      console.log('Single tap!');
-      if (addToCartTapped.current) {
-        addToCartTapped.current = false;
-      } else {
-        onPressItem();
+      console.log('Single tap!', addToCartTapped.value);
+      if (addToCartTapped.value) {
+        return;
       }
+      runOnJS(onPressItem)();
     });
 
   const doubleTap = Gesture.Tap()
@@ -77,21 +77,23 @@ const CollectProductItemComponent = (props: Props) => {
     .numberOfTaps(2)
     .onStart(() => {
       console.log('Double tap!');
-      if (addToCartTapped.current) {
-        addToCartTapped.current = false;
-      } else {
-        if (onPressCollect) {
-          onPressCollect();
-        }
+      if (addToCartTapped.value) {
+        return;
+      }
+      if (onPressCollect) {
+        runOnJS(onPressCollect)();
       }
     });
 
   const onAddToCartPress = useCallback(() => {
-    addToCartTapped.current = true;
+    addToCartTapped.value = true; // ✅ Runs on JS thread
     if (onPressCollect) {
       onPressCollect();
     }
-  }, [onPressCollect]);
+    setTimeout(() => {
+      addToCartTapped.value = false;
+    }, 400);
+  }, [addToCartTapped, onPressCollect]);
 
   return (
     <GestureDetector gesture={Gesture.Exclusive(doubleTap, singleTap)}>

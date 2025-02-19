@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, TextProps, StyleSheet, TextStyle} from 'react-native';
+import config from 'src/config';
 import utils from 'src/utils';
 
 interface Props extends TextProps {
@@ -27,6 +28,6 @@ const styles = StyleSheet.create({
   },
   text2: {
     fontSize: utils.normalize(17),
-    fontWeight: '600',
+    fontFamily: config.font.NotoSansSemiBold,
   },
 });

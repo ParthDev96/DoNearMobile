@@ -6,6 +6,7 @@ import ProfileScreen from './Tabs/ProfileScreen';
 import VolunteerScreen from './Tabs/VolunteerScreen';
 import Signup from './Auth/Signup';
 import UpdateProfile from './Auth/UpdateProfile';
+import ProductDetails from './ProductDetails';
 
 export default {
   Login,
@@ -16,4 +17,5 @@ export default {
   ProfileScreen,
   Signup,
   UpdateProfile,
+  ProductDetails,
 };

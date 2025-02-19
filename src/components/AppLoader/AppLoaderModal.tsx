@@ -51,10 +51,10 @@ const AppLoaderModal: React.FC = () => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 15,
-    lineHeight: 19,
+    fontSize: utils.normalize(15),
+    lineHeight: utils.normalize(19),
     textAlign: 'center',
-    marginTop: 20,
+    marginTop: utils.normalize(20),
     color: colors.COLOR_WHITE,
   },
 });

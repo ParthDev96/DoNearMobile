@@ -1,10 +1,18 @@
 import {StyleSheet} from 'react-native';
+import config from 'src/config';
+import utils from 'src/utils';
 
 const styles = StyleSheet.create({
+  flatListContainer: {
+    paddingTop: utils.normalize(15),
+    paddingHorizontal: utils.normalize(15),
+  },
+  itemSep: {
+    height: utils.normalize(15),
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: config.colors.COLOR_BG_APP,
   },
 });
 
