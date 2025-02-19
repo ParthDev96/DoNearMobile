@@ -43,11 +43,11 @@ export default StyleSheet.create({
     paddingVertical: utils.normalize(10),
   },
   profileOptionsMainContainer: {
-    marginTop: utils.normalize(20),
+    marginTop: utils.normalize(10),
   },
   profileOptionContainer: {
     height: utils.normalize(60),
-    borderBottomColor: config.colors.COLOR_APP_LIGHT_GRAY,
+    borderBottomColor: config.colors.COLOR_APP_LIGHT_GRAY + '50',
     borderBottomWidth: utils.normalize(1),
     alignItems: 'center',
     flexDirection: 'row',
@@ -78,7 +78,7 @@ export default StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: config.colors.COLOR_WHITE,
+    backgroundColor: config.colors.COLOR_BG_APP,
   },
   scrollView: {
     width: config.ConstantVariables.DYNAMIC_COMPONENTS_WIDTH,
@@ -86,6 +86,11 @@ export default StyleSheet.create({
   },
   profileMainContainer: {
     flexDirection: 'row',
+    backgroundColor: config.colors.COLOR_WHITE,
+    paddingHorizontal: utils.normalize(20),
+    paddingBottom: utils.normalize(20),
+    borderBottomLeftRadius: utils.normalize(60),
+    borderBottomRightRadius: utils.normalize(60),
   },
   profileContainer: {
     height: utils.normalize(80),

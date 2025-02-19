@@ -121,6 +121,7 @@ const ProfileScreen = ({navigation}: StackPropsType<'ProfileScreen'>) => {
     //   // }, 400);
     // }
     // dispatch(setLogout());
+    AppLoader.hide();
     navigation.reset({
       index: 0,
       routes: [{name: 'Login'}],
@@ -271,7 +272,13 @@ const ProfileScreen = ({navigation}: StackPropsType<'ProfileScreen'>) => {
 
   const renderProfileView = useMemo(() => {
     return (
-      <View style={styles.profileMainContainer}>
+      <View
+        style={[
+          styles.profileMainContainer,
+          {
+            paddingTop: insets.top + utils.normalize(20),
+          },
+        ]}>
         <ProgressiveImage
           thumbImageUri={' '}
           containerStyle={styles.profileContainer}
@@ -279,21 +286,18 @@ const ProfileScreen = ({navigation}: StackPropsType<'ProfileScreen'>) => {
         />
         <View style={styles.profileRightContainer}>
           <Components.CustomText style={styles.userName}>
-            {'name'}
+            {'John Doe'}
           </Components.CustomText>
         </View>
       </View>
     );
-  }, []);
+  }, [insets.top]);
 
   return (
     <View style={styles.container}>
+      {renderProfileView}
       <ScrollView
-        style={{
-          marginTop: insets.top,
-        }}
         contentContainerStyle={{
-          paddingTop: utils.normalize(20),
           paddingBottom:
             insets.bottom +
             config.ConstantVariables.TAB_BAR_TOTAL_HEIGHT +
@@ -301,7 +305,6 @@ const ProfileScreen = ({navigation}: StackPropsType<'ProfileScreen'>) => {
         }}
         showsVerticalScrollIndicator={false}>
         <View style={styles.scrollView}>
-          {renderProfileView}
           {renderProfileOptions}
           {renderUserOptions}
         </View>
