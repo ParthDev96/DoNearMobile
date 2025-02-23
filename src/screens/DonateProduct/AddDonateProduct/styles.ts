@@ -22,6 +22,7 @@ export default StyleSheet.create({
   },
   regularText: {
     fontSize: utils.normalize(15),
+    fontFamily: config.font.NotoSansRegular,
     lineHeight: utils.normalize(19),
   },
 

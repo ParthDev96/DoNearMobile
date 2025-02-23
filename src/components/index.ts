@@ -2,6 +2,7 @@ import AnimatedButton from './AnimatedButton';
 import AppButton from './AppButton';
 import CustomText from './CustomText';
 import CustomTextInput from './CustomTextInput';
+import ImagePickerModal from './ImagePickerModal';
 import CategoryItemComponent from './ListItems/CategoryItemComponent';
 import DonateProductItemComponent from './ListItems/DonateProductItemComponent';
 import NavigationBar from './NavigationBar';
@@ -18,4 +19,5 @@ export default {
   NavigationBar,
   DonateProductItemComponent,
   CategoryItemComponent,
+  ImagePickerModal,
 };

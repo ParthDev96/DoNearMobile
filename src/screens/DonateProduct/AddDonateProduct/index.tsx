@@ -2,7 +2,6 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -38,51 +37,51 @@ const AddDonateProduct = ({navigation}: StackPropsType<'AddDonateProduct'>) => {
 
   const {pickImageFromCamera, pickImageFromGallery} = useImagePicker();
 
-  //   const handlePickImageFromCamera = async () => {
-  //     try {
-  //       const result: any = await pickImageFromCamera();
-  //       if (result) {
-  //         const t_image = [...images];
-  //         t_image.push(result);
-  //         setImages(t_image);
-  //       }
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
+  const handlePickImageFromCamera = async () => {
+    try {
+      const result: any = await pickImageFromCamera();
+      if (result) {
+        const t_image = [...images];
+        t_image.push(result);
+        setImages(t_image);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  //   const handlePickImageFromGallery = async () => {
-  //     try {
-  //       const result: any = await pickImageFromGallery();
-  //       const t_image = [...images];
-  //       t_image.push(result);
-  //       setImages(t_image);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
+  const handlePickImageFromGallery = async () => {
+    try {
+      const result: any = await pickImageFromGallery();
+      const t_image = [...images];
+      t_image.push(result);
+      setImages(t_image);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const renderCustomInfoView = useMemo(() => {
     return (
       <View style={styles.messageContainer}>
-        <Text style={styles.boldText}>
+        <Components.CustomText style={styles.boldText}>
           {t('New') + ': '}
-          <Text style={styles.regularText}>
+          <Components.CustomText style={styles.regularText}>
             {t('NewProductConditionMessage') + '\n'}
-          </Text>
-        </Text>
-        <Text style={styles.boldText}>
+          </Components.CustomText>
+        </Components.CustomText>
+        <Components.CustomText style={styles.boldText}>
           {t('Good') + ': '}
-          <Text style={styles.regularText}>
+          <Components.CustomText style={styles.regularText}>
             {t('GoodProductConditionMessage') + '\n'}
-          </Text>
-        </Text>
-        <Text style={styles.boldText}>
+          </Components.CustomText>
+        </Components.CustomText>
+        <Components.CustomText style={styles.boldText}>
           {t('Poor') + ' '}
-          <Text style={styles.regularText}>
+          <Components.CustomText style={styles.regularText}>
             {t('PoorProductConditionMessage')}
-          </Text>
-        </Text>
+          </Components.CustomText>
+        </Components.CustomText>
       </View>
     );
   }, [t]);
@@ -251,22 +250,22 @@ const AddDonateProduct = ({navigation}: StackPropsType<'AddDonateProduct'>) => {
           <SafeAreaView />
         </View>
 
-        {/* <Components.ImagePickerModal
-        isVisible={modalVisible}
-        onClose={() => setModalVisible(false)}
-        onSelectGallery={() => {
-          setModalVisible(false);
-          setTimeout(() => {
-            handlePickImageFromGallery();
-          }, 500);
-        }}
-        onSelectCamera={() => {
-          setModalVisible(false);
-          setTimeout(() => {
-            handlePickImageFromCamera();
-          }, 500);
-        }}
-      /> */}
+        <Components.ImagePickerModal
+          isVisible={modalVisible}
+          onClose={() => setModalVisible(false)}
+          onSelectGallery={() => {
+            setModalVisible(false);
+            setTimeout(() => {
+              handlePickImageFromGallery();
+            }, 500);
+          }}
+          onSelectCamera={() => {
+            setModalVisible(false);
+            setTimeout(() => {
+              handlePickImageFromCamera();
+            }, 500);
+          }}
+        />
       </ScrollView>
     </View>
   );

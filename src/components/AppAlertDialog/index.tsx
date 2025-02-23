@@ -46,36 +46,20 @@ const AppAlertDialogModal = forwardRef((props, ref) => {
             </CustomText>
           )}
           {modalProps.customMessageView && modalProps.customMessageView}
-          <View style={styles.buttonsContainer}>
-            {modalProps.negativeButtonText && (
-              <AppButton
-                text={modalProps.negativeButtonText}
-                onPress={() => {
-                  if (modalProps.onNegativeButtonPress) {
-                    modalProps.onNegativeButtonPress();
-                  }
-                  setVisible(false);
-                }}
-                style={styles.negativeButtonContainer}
-                textStyle={styles.negativeButtonText}
-              />
-            )}
-            {modalProps.negativeButtonText && <View style={styles.buttonSep} />}
-            <AppButton
-              text={
-                modalProps.positiveButtonText
-                  ? modalProps.positiveButtonText
-                  : t('Ok')
+          <AppButton
+            text={
+              modalProps.positiveButtonText
+                ? modalProps.positiveButtonText
+                : t('Close')
+            }
+            onPress={() => {
+              if (modalProps.onPositiveButtonPress) {
+                modalProps.onPositiveButtonPress();
               }
-              onPress={() => {
-                if (modalProps.onPositiveButtonPress) {
-                  modalProps.onPositiveButtonPress();
-                }
-                setVisible(false);
-              }}
-              style={styles.positiveButtonContainer}
-            />
-          </View>
+              setVisible(false);
+            }}
+            style={styles.positiveButtonContainer}
+          />
         </View>
       );
     }
@@ -84,7 +68,7 @@ const AppAlertDialogModal = forwardRef((props, ref) => {
     <Modal
       isVisible={isModalVisible}
       statusBarTranslucent
-      deviceHeight={utils.Dimen.SCREEN_HEIGHT}
+      style={styles.modal}
       onBackButtonPress={() => {
         setVisible(false);
       }}>
@@ -94,19 +78,24 @@ const AppAlertDialogModal = forwardRef((props, ref) => {
 });
 
 const styles = StyleSheet.create({
+  modal: {
+    margin: 0,
+  },
   buttonSep: {
-    width: 20,
+    width: utils.normalize(20),
   },
   negativeButtonContainer: {
     flex: 1,
-    height: 45,
+    height: utils.normalize(45),
     backgroundColor: config.colors.COLOR_TRANSPARENT,
-    borderWidth: 1,
+    borderWidth: utils.normalize(1),
     borderColor: config.colors.COLOR_APP_DARK_GRAY + '50',
   },
   positiveButtonContainer: {
-    flex: 1,
-    height: 45,
+    // flex: 1,
+    height: utils.normalize(45),
+    paddingHorizontal: utils.normalize(40),
+    marginTop: utils.normalize(20),
   },
   negativeButtonText: {
     color: config.colors.COLOR_APP_DARK_GRAY,
@@ -117,23 +106,27 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     width: '100%',
-    marginTop: 30,
+    marginTop: utils.normalize(30),
   },
   modalContainer: {
     backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
+    padding: utils.normalize(20),
+    borderRadius: utils.normalize(10),
     alignItems: 'center',
+    width: config.ConstantVariables.DYNAMIC_POPUP_WIDTH,
+    alignSelf: 'center',
   },
   modalTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 10,
+    fontSize: utils.normalize(18),
+    lineHeight: utils.normalize(22),
+    fontFamily: config.font.NotoSansBold,
+    marginTop: utils.normalize(10),
   },
   modalText: {
-    fontSize: 15,
-    marginTop: 20,
+    fontSize: utils.normalize(15),
+    marginTop: utils.normalize(20),
     textAlign: 'center',
+    fontFamily: config.font.NotoSansRegular,
   },
 });
 
