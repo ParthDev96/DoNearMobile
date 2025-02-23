@@ -1,6 +1,7 @@
 import React, {useMemo} from 'react';
 import {
   Platform,
+  StyleProp,
   StyleSheet,
   TouchableOpacityProps,
   ViewStyle,
@@ -12,11 +13,12 @@ import {default as AntDesign} from 'react-native-vector-icons/AntDesign';
 
 type Props = {
   onPress: () => void;
-  containerStyle?: ViewStyle;
+  containerStyle?: StyleProp<ViewStyle>;
   extraButtonProps?: TouchableOpacityProps;
   customImage?: React.ReactNode;
   scaleValue?: number;
   hasShadow?: boolean;
+  iconNameAntDesign?: string;
 };
 
 const RoundedButton = (props: Props) => {
@@ -27,17 +29,18 @@ const RoundedButton = (props: Props) => {
     customImage,
     scaleValue,
     hasShadow = true,
+    iconNameAntDesign,
   } = props;
 
   const renderIcon = useMemo(() => {
     return (
       <AntDesign
-        name="arrowright"
+        name={iconNameAntDesign ? iconNameAntDesign : 'arrowright'}
         size={utils.normalize(30)}
         color={config.colors.COLOR_APP_TEXT}
       />
     );
-  }, []);
+  }, [iconNameAntDesign]);
 
   return (
     <AnimatedButton

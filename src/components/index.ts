@@ -2,6 +2,7 @@ import AnimatedButton from './AnimatedButton';
 import AppButton from './AppButton';
 import CustomText from './CustomText';
 import CustomTextInput from './CustomTextInput';
+import CategoryItemComponent from './ListItems/CategoryItemComponent';
 import DonateProductItemComponent from './ListItems/DonateProductItemComponent';
 import NavigationBar from './NavigationBar';
 import NestedTextComponent from './NestedTextComponent';
@@ -16,4 +17,5 @@ export default {
   AppButton,
   NavigationBar,
   DonateProductItemComponent,
+  CategoryItemComponent,
 };

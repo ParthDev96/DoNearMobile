@@ -28,7 +28,7 @@ type RootStackParamList = {
     isCollect?: boolean;
   };
   CollectProductListScreen: {};
-  SelectCategory: {};
+  SelectDonateCategory: {};
   CartScreen: {};
 };
 

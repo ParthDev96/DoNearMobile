@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import {FlatList, Image, TouchableOpacity, View} from 'react-native';
 import {StackPropsType} from '../../../types/navigation';
 import styles from './styles';
 import {PRODUCT} from 'src/types/Products';
@@ -22,6 +22,9 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const onDonatePress = useCallback(() => {
+    navigation.navigate('SelectDonateCategory', {});
+  }, [navigation]);
   const renderItem = useCallback(
     ({item, index}: {item: PRODUCT; index: number}) => {
       return (
@@ -41,12 +44,25 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
     return <View style={styles.itemSep} />;
   }, []);
 
+  const renderDonateIcon = useMemo(() => {
+    return (
+      <TouchableOpacity onPress={() => onDonatePress()} activeOpacity={0.7}>
+        <Image
+          source={config.images.ic_donate_add}
+          resizeMode="contain"
+          style={styles.donateImage}
+        />
+      </TouchableOpacity>
+    );
+  }, [onDonatePress]);
+
   return (
     <View style={styles.container}>
       <Components.NavigationBar
         onBackPress={() => {
           navigation.goBack();
         }}
+        customRightView={renderDonateIcon}
         title={'Home'}
       />
       <FlatList
@@ -66,6 +82,22 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
           },
         ]}
       />
+      {/* <Components.RoundedButton
+        extraButtonProps={{
+          activeOpacity: 0.99,
+        }}
+        onPress={() => {}}
+        customImage={renderDonateIcon}
+        containerStyle={[
+          styles.plusContainer,
+          {
+            bottom:
+              insets.bottom +
+              config.ConstantVariables.TAB_BAR_TOTAL_HEIGHT +
+              utils.normalize(10),
+          },
+        ]}
+      /> */}
     </View>
   );
 };

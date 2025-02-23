@@ -3,6 +3,10 @@ import config from 'src/config';
 import utils from 'src/utils';
 
 export default StyleSheet.create({
+  donateImage: {
+    height: utils.normalize(40),
+    width: utils.normalize(40),
+  },
   headerContainer: {
     zIndex: 1000,
   },

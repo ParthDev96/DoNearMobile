@@ -85,7 +85,6 @@ const getStaticProductList = () => {
   for (let i = 0; i < 5; i++) {
     const randomNumber = getRandomNumber();
     const randCondtion = getRandomNumber(3);
-    console.log('randCondtion: ', randCondtion);
 
     const r_items = getItemsFromRandomNumber(randomNumber);
     PRODUCT_LIST.push({

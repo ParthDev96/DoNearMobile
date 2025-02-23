@@ -7,6 +7,7 @@ import VolunteerScreen from './Tabs/VolunteerScreen';
 import Signup from './Auth/Signup';
 import UpdateProfile from './Auth/UpdateProfile';
 import ProductDetails from './ProductDetails';
+import SelectDonateCategory from './DonateProduct/SelectDonateCategory';
 
 export default {
   Login,
@@ -18,4 +19,5 @@ export default {
   Signup,
   UpdateProfile,
   ProductDetails,
+  SelectDonateCategory,
 };
