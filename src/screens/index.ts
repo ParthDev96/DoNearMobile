@@ -8,6 +8,7 @@ import Signup from './Auth/Signup';
 import UpdateProfile from './Auth/UpdateProfile';
 import ProductDetails from './ProductDetails';
 import SelectDonateCategory from './DonateProduct/SelectDonateCategory';
+import AddDonateProduct from './DonateProduct/AddDonateProduct';
 
 export default {
   Login,
@@ -20,4 +21,5 @@ export default {
   UpdateProfile,
   ProductDetails,
   SelectDonateCategory,
+  AddDonateProduct,
 };

@@ -25,10 +25,10 @@ export var ConstantVariables: ConstantVariablesTypes = {
   APP_DATE_FORMAT_DAY: 'DD MMM, dddd',
   APP_TIME_FORMAT: 'hh:mm A',
   API_TIME_FORMAT: 'HH:mm:ss',
-  DYNAMIC_SCREEN_WIDTH: utils.dimension.isPad ? '60%' : '92%',
-  DYNAMIC_TAB_WIDTH: utils.dimension.isPad ? '60%' : '100%',
-  DYNAMIC_COMPONENTS_WIDTH: utils.dimension.isPad ? '60%' : '87%',
-  DYNAMIC_POPUP_WIDTH: utils.dimension.isPad ? '60%' : '100%',
+  DYNAMIC_SCREEN_WIDTH: utils.dimension.isPad ? '65%' : '92%',
+  DYNAMIC_TAB_WIDTH: utils.dimension.isPad ? '65%' : '100%',
+  DYNAMIC_COMPONENTS_WIDTH: utils.dimension.isPad ? '65%' : '87%',
+  DYNAMIC_POPUP_WIDTH: utils.dimension.isPad ? '65%' : '100%',
 };
 
 export default ConstantVariables;

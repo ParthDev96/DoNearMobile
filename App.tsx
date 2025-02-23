@@ -22,6 +22,9 @@ import KeyboardManager from 'react-native-keyboard-manager';
 import AppLoaderModal from 'src/components/AppLoader/AppLoaderModal';
 import AppPopupModal from 'src/components/AppPopup/AppPopupModal';
 import AppMediaOptionsModal from 'src/components/AppMediaOptions/AppMediaOptions';
+import AppAlertDialogModal, {
+  AppAlertDialog,
+} from 'src/components/AppAlertDialog';
 
 if (Platform.OS === 'ios') {
   KeyboardManager.setEnable(true);
@@ -47,13 +50,13 @@ function App(): React.JSX.Element {
                 <AppMediaOptionsModal />
               </PaperProvider>
               <Toast config={toastConfig} />
-              {/* <AppAlertDialog
+              <AppAlertDialogModal
                 ref={(ref: any) => {
                   if (ref) {
-                    AppAlertDialogManager.setModalRef(ref);
+                    AppAlertDialog.setModalRef(ref);
                   }
                 }}
-              /> */}
+              />
             </SafeAreaProvider>
           </GestureHandlerRootView>
         </NavigationContainer>

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {PRODUCT} from '../../types/Products';
-import Components from '..';
 import config from '../../config';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {getProductCondtionFromRandomNumber} from '../../utils/StaticData';
+import CustomText from '../CustomText';
 
 interface Props {
   item: PRODUCT;
@@ -22,14 +22,12 @@ const CartItemComponent = (props: Props) => {
         source={item.image}
       />
       <View style={styles.centerContainer}>
-        <Components.TextComponent numberOfLines={1} style={styles.title}>
+        <CustomText numberOfLines={1} style={styles.title}>
           {item.title}
-        </Components.TextComponent>
-        <Components.TextComponent
-          numberOfLines={1}
-          style={styles.productContidion}>
+        </CustomText>
+        <CustomText numberOfLines={1} style={styles.productContidion}>
           {getProductCondtionFromRandomNumber(item.productCondition)}
-        </Components.TextComponent>
+        </CustomText>
       </View>
       <TouchableOpacity
         activeOpacity={0.7}

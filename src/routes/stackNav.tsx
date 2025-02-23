@@ -52,6 +52,10 @@ const StackNavigator = () => {
       <Stack.Screen name="UpdateProfile" component={screens.UpdateProfile} />
       <Stack.Screen name="ProductDetails" component={screens.ProductDetails} />
       <Stack.Screen
+        name="AddDonateProduct"
+        component={screens.AddDonateProduct}
+      />
+      <Stack.Screen
         name="SelectDonateCategory"
         component={screens.SelectDonateCategory}
       />

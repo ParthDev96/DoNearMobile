@@ -154,7 +154,21 @@
   "CollectProduct": "Collect Product",
   "CollectProductMessage": "Are you sure you want to collect {{title}} product?",
   "ExpiryDate": "Expiry date",
+  "New": "New",
+  "Good": "Good",
+  "Poor": "Poor",
+  "NewProductConditionMessage": "Perfect condition! Ready to make someone happy.",
+  "GoodProductConditionMessage": "Good! Still, lots of life left in this.",
+  "PoorProductConditionMessage": "Needs repairs or may be unfit for use.",
+  "ProductConditions": "Product Conditions",
+  "Money": "Money",
+  "Food": "Food",
+  "Cloths": "Cloths",
+  "Footwear": "Footwear",
+  "Electronic": "Electronic",
+  "Toys": "Toys",
 
   "ProductAddedToTheCart": "Product added to the cart",
-  "ProductCollectedSuccessully": "Product collected successully"
+  "ProductCollectedSuccessully": "Product collected successully",
+  "ProductAddedSuccessully": "Product added successully"
 }

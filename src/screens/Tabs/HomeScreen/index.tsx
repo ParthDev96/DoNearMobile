@@ -8,10 +8,12 @@ import StaticData from 'src/utils/StaticData';
 import Components from 'src/components';
 import config from 'src/config';
 import utils from 'src/utils';
+import {useTranslation} from 'react-i18next';
 
 const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
   const [data, setData] = useState<PRODUCT[]>([]);
   const insets = useSafeAreaInsets();
+  const {t} = useTranslation();
 
   const generateProductList = useCallback(() => {
     setData(StaticData.getStaticProductList());
@@ -63,7 +65,7 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
           navigation.goBack();
         }}
         customRightView={renderDonateIcon}
-        title={'Home'}
+        title={t('Home')}
       />
       <FlatList
         keyExtractor={item => item.product_id + ''}
@@ -82,22 +84,6 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
           },
         ]}
       />
-      {/* <Components.RoundedButton
-        extraButtonProps={{
-          activeOpacity: 0.99,
-        }}
-        onPress={() => {}}
-        customImage={renderDonateIcon}
-        containerStyle={[
-          styles.plusContainer,
-          {
-            bottom:
-              insets.bottom +
-              config.ConstantVariables.TAB_BAR_TOTAL_HEIGHT +
-              utils.normalize(10),
-          },
-        ]}
-      /> */}
     </View>
   );
 };

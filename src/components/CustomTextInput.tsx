@@ -202,7 +202,6 @@ const CustomTextInput = (props: Props) => {
             !editable && styles.disableStyle,
             textInputStyle,
           ]}
-          blurOnSubmit={false}
           placeholder={placeholder}
           autoCapitalize={autoCapitalize ? autoCapitalize : 'none'}
           onSubmitEditing={onSubmitEditing}

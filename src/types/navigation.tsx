@@ -21,7 +21,7 @@ type RootStackParamList = {
   UpdateProfile: {isEdit?: boolean};
   HomeScreen: {};
   NGOScreen: {};
-  AddProductScreen: {};
+  AddDonateProduct: {};
   DonateProductListScreen: {};
   ProductDetails: {
     product: PRODUCT;
