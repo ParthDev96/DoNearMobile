@@ -3,9 +3,12 @@ import config from 'src/config';
 import utils from 'src/utils';
 
 export default StyleSheet.create({
-  flatListContainer: {
-    paddingTop: utils.normalize(15),
+  headerContainer: {
+    zIndex: 1000,
+  },
+  contentContainer: {
     paddingHorizontal: utils.normalize(15),
+    paddingTop: utils.normalize(15),
   },
   itemSep: {
     height: utils.normalize(15),

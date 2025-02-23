@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {StackPropsType} from '../../../types/navigation';
 import styles from './styles';
@@ -6,10 +6,8 @@ import {PRODUCT} from 'src/types/Products';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import StaticData from 'src/utils/StaticData';
 import Components from 'src/components';
-import CollectProductItemComponent from 'src/components/ListItems/CollectProductItemComponent';
-import Toast from 'react-native-toast-message';
-import utils from 'src/utils';
 import config from 'src/config';
+import utils from 'src/utils';
 
 const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
   const [data, setData] = useState<PRODUCT[]>([]);
@@ -24,80 +22,50 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onPressCollect = useCallback(() => {
-    Toast.show({
-      type: 'customToast',
-      props: {
-        message: 'Product added to the cart.',
-      },
-    });
-    // dispatch(addProductToCart(item));
-    // const t_data = [...data];
-    // t_data.splice(index, 1);
-    // setData(t_data);
-    // AppAlertDialogManager.show({
-    //   title: 'Collect Product',
-    //   message: `Are you sure you want to collect ${item.title} product?`,
-    //   negativeButtonText: config.strings.No,
-    //   positiveButtonText: config.strings.Yes,
-    //   onPositiveButtonPress: () => {
-
-    //   },
-    // });
-  }, []);
-
   const renderItem = useCallback(
     ({item, index}: {item: PRODUCT; index: number}) => {
       return (
-        <CollectProductItemComponent
+        <Components.DonateProductItemComponent
           onPressItem={() => {
-            navigation.navigate('ProductDetails', {
-              product: item,
-              isCollect: true,
-            });
-          }}
-          onPressCollect={() => {
-            onPressCollect();
+            // navigation.navigate('ProductDetailsScreen', {product: item});
           }}
           item={item}
           index={index}
         />
       );
     },
-    [navigation, onPressCollect],
+    [],
   );
 
   const renderItemSep = useCallback(() => {
     return <View style={styles.itemSep} />;
   }, []);
 
-  const renderList = useMemo(() => {
-    return (
+  return (
+    <View style={styles.container}>
+      <Components.NavigationBar
+        onBackPress={() => {
+          navigation.goBack();
+        }}
+        title={'Home'}
+      />
       <FlatList
         keyExtractor={item => item.product_id + ''}
         renderItem={renderItem}
         data={data}
-        ItemSeparatorComponent={renderItemSep}
-        numColumns={utils.dimension.isPad ? 3 : 2}
         showsVerticalScrollIndicator={false}
+        ItemSeparatorComponent={renderItemSep}
+        numColumns={utils.dimension.isPad ? 2 : 1}
         contentContainerStyle={[
-          styles.flatListContainer,
-          // eslint-disable-next-line react-native/no-inline-styles
+          styles.contentContainer,
           {
             paddingBottom:
               insets.bottom +
               config.ConstantVariables.TAB_BAR_TOTAL_HEIGHT +
-              utils.normalize(25),
-            flex: data.length === 0 ? 1 : undefined,
+              utils.normalize(40),
           },
         ]}
       />
-    );
-  }, [data, insets.bottom, renderItem, renderItemSep]);
-  return (
-    <View style={styles.container}>
-      <Components.NavigationBar title="Home" />
-      {renderList}
     </View>
   );
 };

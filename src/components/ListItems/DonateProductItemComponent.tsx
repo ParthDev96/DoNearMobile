@@ -10,17 +10,15 @@ import {PRODUCT} from '../../types/Products';
 import config from '../../config';
 import Components from '..';
 import LinearGradient from 'react-native-linear-gradient';
-import {useTranslation} from 'react-i18next';
+import utils from 'src/utils';
 
 interface Props {
   item: PRODUCT;
   index: number;
   onPressItem: () => void;
-  onPressCollect?: () => void;
 }
 const DonateProductItemComponent = (props: Props) => {
-  const {t} = useTranslation();
-  const {item, onPressItem, onPressCollect} = props;
+  const {item, onPressItem} = props;
 
   const renderImage = useMemo(() => {
     return (
@@ -57,14 +55,6 @@ const DonateProductItemComponent = (props: Props) => {
       <Components.CustomText numberOfLines={2} style={styles.description}>
         {item.description}
       </Components.CustomText>
-      {onPressCollect && (
-        <Components.AppButton
-          textStyle={styles.collectTextStyle}
-          containerStyle={styles.collectButtonStyle}
-          text={t('Collect')}
-          onPress={onPressCollect}
-        />
-      )}
     </TouchableOpacity>
   );
 };
@@ -72,45 +62,37 @@ const DonateProductItemComponent = (props: Props) => {
 export default DonateProductItemComponent;
 
 const styles = StyleSheet.create({
-  collectButtonStyle: {
-    marginHorizontal: 15,
-    borderRadius: 15,
-    marginTop: 15,
-    height: 40,
-  },
-  collectTextStyle: {
-    fontSize: 15,
-  },
   expiryDate: {
-    fontSize: 14,
-    marginHorizontal: 10,
-    right: 10,
-    bottom: 15,
+    fontSize: utils.normalize(14),
+    marginHorizontal: utils.normalize(10),
+    right: utils.normalize(10),
+    bottom: utils.normalize(15),
     color: config.colors.COLOR_WHITE,
     position: 'absolute',
   },
   description: {
-    fontSize: 14,
-    marginHorizontal: 10,
-    marginTop: 5,
+    fontSize: utils.normalize(13),
+    lineHeight: utils.normalize(17),
+    marginHorizontal: utils.normalize(10),
+    marginTop: utils.normalize(5),
+    fontFamily: config.font.NotoSansRegular,
   },
   title: {
-    fontWeight: '600',
-    fontSize: 16,
-    marginHorizontal: 10,
-    marginTop: 10,
+    fontSize: utils.normalize(15),
+    marginHorizontal: utils.normalize(10),
+    marginTop: utils.normalize(10),
   },
   productImage: {
     width: '100%',
     height: '100%',
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    borderTopLeftRadius: utils.normalize(10),
+    borderTopRightRadius: utils.normalize(10),
   },
   productImageContainer: {
     width: '100%',
-    height: 150,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    height: utils.normalize(170),
+    borderTopLeftRadius: utils.normalize(10),
+    borderTopRightRadius: utils.normalize(10),
   },
   productImageGradient: {
     width: '100%',
@@ -119,18 +101,23 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: config.colors.COLOR_WHITE,
-    borderRadius: 10,
-    paddingBottom: 15,
+    borderRadius: utils.normalize(10),
+    paddingBottom: utils.normalize(15),
+    marginRight: utils.normalize(15),
+    width:
+      (utils.dimension.SCREEN_WIDTH -
+        utils.normalize(utils.dimension.isPad ? 45 : 30)) /
+      (utils.dimension.isPad ? 2 : 1),
   },
   containerShadow:
     Platform.OS === 'ios'
       ? {
           shadowColor: config.colors.COLOR_APP_DARK_GRAY + '50',
-          shadowOffset: {width: 0, height: 5},
-          shadowRadius: 5,
+          shadowOffset: {width: 0, height: utils.normalize(5)},
+          shadowRadius: utils.normalize(5),
           shadowOpacity: 0.2,
         }
       : {
-          elevation: 7,
+          elevation: utils.normalize(7),
         },
 });
