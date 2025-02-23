@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, ActivityIndicator, StatusBar} from 'react-native';
+import {StyleSheet, ActivityIndicator, StatusBar, View} from 'react-native';
 import Modal from 'react-native-modal';
 import AppLoaderManager from './AppLoaderManager';
 import utils from 'src/utils';
@@ -33,19 +33,21 @@ const AppLoaderModal: React.FC = () => {
   }, []);
 
   return (
-    <Modal
-      statusBarTranslucent
-      deviceWidth={utils.extraDimension.deviceWidth}
-      deviceHeight={utils.extraDimension.deviceHeight}
-      animationIn={'fadeIn'}
-      animationOut={'fadeOut'}
-      isVisible={isVisible}>
-      <StatusBar barStyle={'light-content'} />
-      <ActivityIndicator color={colors.COLOR_WHITE} size={'large'} />
-      {modalConfig.text && (
-        <CustomText style={styles.title}>{modalConfig.text}</CustomText>
-      )}
-    </Modal>
+    <View>
+      <Modal
+        statusBarTranslucent
+        deviceWidth={utils.extraDimension.deviceWidth}
+        deviceHeight={utils.extraDimension.deviceHeight}
+        animationIn={'fadeIn'}
+        animationOut={'fadeOut'}
+        isVisible={isVisible}>
+        <StatusBar barStyle={'light-content'} />
+        <ActivityIndicator color={colors.COLOR_WHITE} size={'large'} />
+        {modalConfig.text && (
+          <CustomText style={styles.title}>{modalConfig.text}</CustomText>
+        )}
+      </Modal>
+    </View>
   );
 };
 

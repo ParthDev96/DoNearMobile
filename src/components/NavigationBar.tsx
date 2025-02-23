@@ -97,11 +97,13 @@ const NavigationBar = (props: Props) => {
       <View
         style={[
           styles.container,
-          styles.shadowContainer,
+          !showGradient && styles.shadowContainer,
+          // eslint-disable-next-line react-native/no-inline-styles
           {
             backgroundColor: showGradient
               ? config.colors.COLOR_TRANSPARENT
               : backgroundColor,
+            zIndex: showGradient ? 4000 : 1000,
           },
         ]}>
         {showBack ? (
@@ -177,7 +179,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    zIndex: 100,
+    zIndex: 3500,
   },
 
   mainContainerStyle: {
@@ -209,7 +211,7 @@ const styles = StyleSheet.create({
   },
   statusBar: {
     width: '100%',
-    zIndex: 100,
+    zIndex: 3000,
     backgroundColor: config.colors.COLOR_WHITE,
   },
   container: {

@@ -126,50 +126,52 @@ const AppPopupModal: React.FC = () => {
   }, [modalConfig]);
 
   return (
-    <Modal isVisible={isVisible} onBackdropPress={() => AppPopupManager.hide()}>
-      <View style={styles.modalView}>
-        {modalConfig.image && (
-          <Image
-            source={modalConfig.image}
-            resizeMode="contain"
-            style={styles.image}
-          />
-        )}
-        {modalConfig.customIcon && (
-          <View style={styles.customIconContainer}>
-            {modalConfig.customIcon}
+    <View>
+      <Modal statusBarTranslucent={true} isVisible={isVisible}>
+        <View style={styles.modalView}>
+          {modalConfig.image && (
+            <Image
+              source={modalConfig.image}
+              resizeMode="contain"
+              style={styles.image}
+            />
+          )}
+          {modalConfig.customIcon && (
+            <View style={styles.customIconContainer}>
+              {modalConfig.customIcon}
+            </View>
+          )}
+          <Components.CustomText style={[styles.title, modalConfig.titleStyle]}>
+            {modalConfig.title}
+          </Components.CustomText>
+          <Components.CustomText
+            style={[styles.message, modalConfig.messageStyle]}>
+            {modalConfig.message}
+          </Components.CustomText>
+          <View style={styles.buttonContainer}>
+            {renderCancelButton}
+            <Components.AppButton
+              style={StyleSheet.flatten([
+                styles.submitButtonStyle,
+                modalConfig.submitButtonStyle,
+              ])}
+              textStyle={StyleSheet.flatten([
+                styles.submitButtonText,
+                modalConfig.submitButtonTextStyle,
+              ])}
+              text={modalConfig.submitText}
+              onPress={() => {
+                if (modalConfig.onSubmit) {
+                  modalConfig.onSubmit();
+                }
+                AppPopupManager.hide();
+              }}
+              containerStyle={styles.button}
+            />
           </View>
-        )}
-        <Components.CustomText style={[styles.title, modalConfig.titleStyle]}>
-          {modalConfig.title}
-        </Components.CustomText>
-        <Components.CustomText
-          style={[styles.message, modalConfig.messageStyle]}>
-          {modalConfig.message}
-        </Components.CustomText>
-        <View style={styles.buttonContainer}>
-          {renderCancelButton}
-          <Components.AppButton
-            style={StyleSheet.flatten([
-              styles.submitButtonStyle,
-              modalConfig.submitButtonStyle,
-            ])}
-            textStyle={StyleSheet.flatten([
-              styles.submitButtonText,
-              modalConfig.submitButtonTextStyle,
-            ])}
-            text={modalConfig.submitText}
-            onPress={() => {
-              if (modalConfig.onSubmit) {
-                modalConfig.onSubmit();
-              }
-              AppPopupManager.hide();
-            }}
-            containerStyle={styles.button}
-          />
         </View>
-      </View>
-    </Modal>
+      </Modal>
+    </View>
   );
 };
 

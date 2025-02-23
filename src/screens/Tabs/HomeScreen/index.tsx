@@ -96,12 +96,7 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
   }, [data, insets.bottom, renderItem, renderItemSep]);
   return (
     <View style={styles.container}>
-      <Components.NavigationBar
-        mainContainerStyle={{
-          zIndex: 2000,
-        }}
-        title="Home"
-      />
+      <Components.NavigationBar title="Home" />
       {renderList}
     </View>
   );

@@ -45,53 +45,55 @@ const AppMediaOptionsModal: React.FC = () => {
   }, []);
 
   return (
-    <Modal
-      statusBarTranslucent
-      deviceWidth={utils.extraDimension.deviceWidth}
-      deviceHeight={utils.extraDimension.deviceHeight}
-      style={styles.modalStyle}
-      isVisible={isVisible}
-      onBackdropPress={() => AppPopupManager.hide()}>
-      <View
-        style={[
-          styles.modalView,
-          {
-            paddingBottom: insets.bottom + 10,
-          },
-        ]}>
-        <CustomText style={styles.message}>{t('ChooseOption')}</CustomText>
-        <AppButton
-          style={StyleSheet.flatten([styles.cameraButtonStyle])}
-          text={t('Camera')}
-          onPress={() => {
-            AppPopupManager.hide();
-            setTimeout(() => {
-              modalConfig.onSelectOption(IMediaOptions.camera);
-            }, 500);
-          }}
-        />
-        <AppButton
-          style={StyleSheet.flatten([styles.submitButtonStyle])}
-          textStyle={StyleSheet.flatten([styles.submitButtonText])}
-          text={t('Gallery')}
-          onPress={() => {
-            AppPopupManager.hide();
-            setTimeout(() => {
-              modalConfig.onSelectOption(IMediaOptions.gallery);
-            }, 500);
-          }}
-          containerStyle={styles.galleryButton}
-        />
-        <AppButton
-          style={StyleSheet.flatten([styles.cancelButtonStyle])}
-          text={t('Cancel')}
-          onPress={() => {
-            AppPopupManager.hide();
-          }}
-          containerStyle={styles.galleryButton}
-        />
-      </View>
-    </Modal>
+    <View>
+      <Modal
+        statusBarTranslucent
+        deviceWidth={utils.extraDimension.deviceWidth}
+        deviceHeight={utils.extraDimension.deviceHeight}
+        style={styles.modalStyle}
+        isVisible={isVisible}
+        onBackdropPress={() => AppPopupManager.hide()}>
+        <View
+          style={[
+            styles.modalView,
+            {
+              paddingBottom: insets.bottom + 10,
+            },
+          ]}>
+          <CustomText style={styles.message}>{t('ChooseOption')}</CustomText>
+          <AppButton
+            style={StyleSheet.flatten([styles.cameraButtonStyle])}
+            text={t('Camera')}
+            onPress={() => {
+              AppPopupManager.hide();
+              setTimeout(() => {
+                modalConfig.onSelectOption(IMediaOptions.camera);
+              }, 500);
+            }}
+          />
+          <AppButton
+            style={StyleSheet.flatten([styles.submitButtonStyle])}
+            textStyle={StyleSheet.flatten([styles.submitButtonText])}
+            text={t('Gallery')}
+            onPress={() => {
+              AppPopupManager.hide();
+              setTimeout(() => {
+                modalConfig.onSelectOption(IMediaOptions.gallery);
+              }, 500);
+            }}
+            containerStyle={styles.galleryButton}
+          />
+          <AppButton
+            style={StyleSheet.flatten([styles.cancelButtonStyle])}
+            text={t('Cancel')}
+            onPress={() => {
+              AppPopupManager.hide();
+            }}
+            containerStyle={styles.galleryButton}
+          />
+        </View>
+      </Modal>
+    </View>
   );
 };
 
