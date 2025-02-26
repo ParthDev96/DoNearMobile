@@ -28,7 +28,7 @@ type RootStackParamList = {
   };
   CollectProductListScreen: {};
   SelectDonateCategory: {};
-  CartScreen: {};
+  Cart: {};
 };
 
 export default RootStackParamList;

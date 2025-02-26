@@ -51,6 +51,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Signup" component={screens.Signup} />
       <Stack.Screen name="UpdateProfile" component={screens.UpdateProfile} />
       <Stack.Screen name="ProductDetails" component={screens.ProductDetails} />
+      <Stack.Screen name="Cart" component={screens.Cart} />
       <Stack.Screen
         name="AddDonateProduct"
         component={screens.AddDonateProduct}

@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {DeviceEventEmitter, FlatList, View} from 'react-native';
 import {StackPropsType} from '../../../types/navigation';
 import styles from './styles';
 import {PRODUCT} from 'src/types/Products';
@@ -11,14 +11,44 @@ import utils from 'src/utils';
 import config from 'src/config';
 import {useTranslation} from 'react-i18next';
 import {successToast} from 'src/config/toastConfig';
+import {useAppDispatch} from 'src/redux/store';
+import {addProductToCart} from 'src/redux/slices/cartSlice';
+import {EVENT_EMITTER_KEYS} from 'src/config/constant-variables';
+import CartButton from 'src/components/CartButton';
 
 const NGOScreen = ({navigation}: StackPropsType<'NGOScreen'>) => {
   const [data, setData] = useState<PRODUCT[]>([]);
   const insets = useSafeAreaInsets();
   const {t} = useTranslation();
+  const dispatch = useAppDispatch();
+
+  const dataRef = useRef<PRODUCT[]>([]);
 
   const generateProductList = useCallback(() => {
     setData(StaticData.getStaticProductList());
+  }, []);
+
+  useEffect(() => {
+    dataRef.current = data;
+  }, [data]);
+
+  useEffect(() => {
+    const listener = DeviceEventEmitter.addListener(
+      EVENT_EMITTER_KEYS.REMOVE_PRODUCT,
+      (p_data: PRODUCT) => {
+        var index = dataRef.current.findIndex(
+          item => item.product_id === p_data.product_id,
+        );
+        if (index >= 0) {
+          const t_data = [...dataRef.current];
+          t_data.splice(index, 1);
+          setData(t_data);
+        }
+      },
+    );
+    return () => {
+      listener.remove();
+    };
   }, []);
 
   useEffect(() => {
@@ -26,24 +56,18 @@ const NGOScreen = ({navigation}: StackPropsType<'NGOScreen'>) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onPressCollect = useCallback(() => {
-    successToast({
-      text1: t('ProductAddedToTheCart'),
-    });
-    // dispatch(addProductToCart(item));
-    // const t_data = [...data];
-    // t_data.splice(index, 1);
-    // setData(t_data);
-    // AppAlertDialogManager.show({
-    //   title: 'Collect Product',
-    //   message: `Are you sure you want to collect ${item.title} product?`,
-    //   negativeButtonText: config.strings.No,
-    //   positiveButtonText: config.strings.Yes,
-    //   onPositiveButtonPress: () => {
-
-    //   },
-    // });
-  }, [t]);
+  const onPressCollect = useCallback(
+    (item: PRODUCT, index: number) => {
+      successToast({
+        text1: t('ProductAddedToTheCart'),
+      });
+      dispatch(addProductToCart(item));
+      const t_data = [...data];
+      t_data.splice(index, 1);
+      setData(t_data);
+    },
+    [data, dispatch, t],
+  );
 
   const renderItem = useCallback(
     ({item, index}: {item: PRODUCT; index: number}) => {
@@ -56,7 +80,7 @@ const NGOScreen = ({navigation}: StackPropsType<'NGOScreen'>) => {
             });
           }}
           onPressCollect={() => {
-            onPressCollect();
+            onPressCollect(item, index);
           }}
           item={item}
           index={index}
@@ -93,9 +117,18 @@ const NGOScreen = ({navigation}: StackPropsType<'NGOScreen'>) => {
       />
     );
   }, [data, insets.bottom, renderItem, renderItemSep]);
+
+  const customHeaderRightView = useMemo(() => {
+    return <CartButton />;
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Components.NavigationBar title={t('NGO')} />
+      <Components.NavigationBar
+        customRightView={customHeaderRightView}
+        title={t('NGO')}
+        mainContainerStyle={styles.headerContainer}
+      />
       {renderList}
     </View>
   );

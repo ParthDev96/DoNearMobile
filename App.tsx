@@ -25,6 +25,7 @@ import AppMediaOptionsModal from 'src/components/AppMediaOptions/AppMediaOptions
 import AppAlertDialogModal, {
   AppAlertDialog,
 } from 'src/components/AppAlertDialog';
+import {navigationRef} from 'src/routes/RootNavigation';
 
 if (Platform.OS === 'ios') {
   KeyboardManager.setEnable(true);
@@ -35,7 +36,7 @@ function App(): React.JSX.Element {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
           <GestureHandlerRootView style={styles.flex}>
             <SafeAreaProvider>
               <PaperProvider>

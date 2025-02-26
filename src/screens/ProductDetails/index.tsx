@@ -8,6 +8,7 @@ import AppPopup from 'src/components/AppPopup/AppPopup';
 import utils from 'src/utils';
 import {useTranslation} from 'react-i18next';
 import {successToast} from 'src/config/toastConfig';
+import {EVENT_EMITTER_KEYS} from 'src/config/constant-variables';
 
 const ProductDetails = ({
   navigation,
@@ -24,13 +25,16 @@ const ProductDetails = ({
       message: t('CollectProductMessage', {
         title: productDetails.title,
       }),
-      submitText: t('No'),
-      cancelText: t('Yes'),
+      submitText: t('Yes'),
+      cancelText: t('No'),
       onSubmit: () => {
         successToast({
           text1: t('ProductCollectedSuccessully'),
         });
-        DeviceEventEmitter.emit('REMOVE_PRODUCT', productDetails);
+        DeviceEventEmitter.emit(
+          EVENT_EMITTER_KEYS.REMOVE_PRODUCT,
+          productDetails,
+        );
         navigation.goBack();
       },
     });

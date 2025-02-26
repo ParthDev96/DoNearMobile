@@ -9,6 +9,7 @@ import UpdateProfile from './Auth/UpdateProfile';
 import ProductDetails from './ProductDetails';
 import SelectDonateCategory from './DonateProduct/SelectDonateCategory';
 import AddDonateProduct from './DonateProduct/AddDonateProduct';
+import Cart from './Cart';
 
 export default {
   Login,
@@ -22,4 +23,5 @@ export default {
   ProductDetails,
   SelectDonateCategory,
   AddDonateProduct,
+  Cart,
 };

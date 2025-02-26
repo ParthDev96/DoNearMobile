@@ -37,3 +37,7 @@ export const GlobalVariables = {
   IS_CART_LOAD: false,
   IS_MY_PRODUCTS_LOAD: false,
 };
+
+export const EVENT_EMITTER_KEYS = {
+  REMOVE_PRODUCT: 'REMOVE_PRODUCT',
+};
