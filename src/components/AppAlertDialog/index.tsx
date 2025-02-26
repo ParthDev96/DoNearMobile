@@ -65,15 +65,17 @@ const AppAlertDialogModal = forwardRef((props, ref) => {
     }
   }, [modalProps, t]);
   return (
-    <Modal
-      isVisible={isModalVisible}
-      statusBarTranslucent
-      style={styles.modal}
-      onBackButtonPress={() => {
-        setVisible(false);
-      }}>
-      {renderViews}
-    </Modal>
+    <View>
+      <Modal
+        isVisible={isModalVisible}
+        statusBarTranslucent
+        style={styles.modal}
+        onBackButtonPress={() => {
+          setVisible(false);
+        }}>
+        {renderViews}
+      </Modal>
+    </View>
   );
 });
 

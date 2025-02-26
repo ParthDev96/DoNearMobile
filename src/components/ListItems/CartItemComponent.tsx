@@ -23,7 +23,7 @@ const CartItemComponent = (props: Props) => {
         source={item.image}
       />
       <View style={styles.centerContainer}>
-        <CustomText numberOfLines={1} style={styles.title}>
+        <CustomText numberOfLines={2} style={styles.title}>
           {item.title}
         </CustomText>
         <CustomText numberOfLines={1} style={styles.productContidion}>

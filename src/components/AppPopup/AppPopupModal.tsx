@@ -126,7 +126,7 @@ const AppPopupModal: React.FC = () => {
   }, [modalConfig]);
 
   return (
-    <>
+    <View>
       <Modal statusBarTranslucent={true} isVisible={isVisible}>
         <View style={styles.modalView}>
           {modalConfig.image && (
@@ -171,7 +171,7 @@ const AppPopupModal: React.FC = () => {
           </View>
         </View>
       </Modal>
-    </>
+    </View>
   );
 };
 

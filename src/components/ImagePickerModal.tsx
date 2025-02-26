@@ -16,30 +16,34 @@ const ImagePickerModal = (props: Props) => {
   const {t} = useTranslation();
 
   return (
-    <Modal
-      isVisible={isVisible}
-      onBackdropPress={onClose}
-      onSwipeComplete={onClose}
-      swipeDirection="down"
-      style={styles.modal}>
-      <View style={styles.content}>
-        <AppButton
-          text={t('Gallery')}
-          onPress={onSelectGallery}
-          style={styles.buttonContainer}
-        />
-        <AppButton
-          text={t('Camera')}
-          onPress={onSelectCamera}
-          style={styles.buttonContainer}
-        />
-        <AppButton
-          text={t('Cancel')}
-          onPress={onClose}
-          style={styles.cancelButtonContainer}
-        />
-      </View>
-    </Modal>
+    <View>
+      <Modal
+        statusBarTranslucent
+        isVisible={isVisible}
+        onBackdropPress={onClose}
+        onSwipeComplete={onClose}
+        swipeDirection="down"
+        style={styles.modal}>
+        <View style={styles.content}>
+          <AppButton
+            text={t('Gallery')}
+            onPress={onSelectGallery}
+            style={styles.buttonContainer}
+          />
+          <AppButton
+            text={t('Camera')}
+            onPress={onSelectCamera}
+            style={styles.buttonContainer}
+          />
+          <AppButton
+            text={t('Cancel')}
+            onPress={onClose}
+            style={styles.cancelButtonContainer}
+            hasShadow={false}
+          />
+        </View>
+      </Modal>
+    </View>
   );
 };
 
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
   content: {
     backgroundColor: 'white',
     paddingHorizontal: utils.normalize(20),
-    paddingBottom: utils.normalize(20),
+    paddingBottom: utils.normalize(15),
     borderTopLeftRadius: utils.normalize(20),
     borderTopRightRadius: utils.normalize(20),
     width: config.ConstantVariables.DYNAMIC_POPUP_WIDTH,
