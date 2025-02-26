@@ -3,11 +3,11 @@ import {DeviceEventEmitter, Image, ScrollView, View} from 'react-native';
 import Components from '../../components';
 import {StackPropsType} from '../../types/navigation';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import Toast from 'react-native-toast-message';
 import styles from './styles';
 import AppPopup from 'src/components/AppPopup/AppPopup';
 import utils from 'src/utils';
 import {useTranslation} from 'react-i18next';
+import {successToast} from 'src/config/toastConfig';
 
 const ProductDetails = ({
   navigation,
@@ -27,11 +27,8 @@ const ProductDetails = ({
       submitText: t('No'),
       cancelText: t('Yes'),
       onSubmit: () => {
-        Toast.show({
-          type: 'customToast',
-          props: {
-            message: t('ProductCollectedSuccessully'),
-          },
+        successToast({
+          text1: t('ProductCollectedSuccessully'),
         });
         DeviceEventEmitter.emit('REMOVE_PRODUCT', productDetails);
         navigation.goBack();

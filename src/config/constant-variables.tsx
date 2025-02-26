@@ -27,7 +27,7 @@ export var ConstantVariables: ConstantVariablesTypes = {
   API_TIME_FORMAT: 'HH:mm:ss',
   DYNAMIC_SCREEN_WIDTH: utils.dimension.isPad ? '65%' : '92%',
   DYNAMIC_TAB_WIDTH: utils.dimension.isPad ? '65%' : '100%',
-  DYNAMIC_COMPONENTS_WIDTH: utils.dimension.isPad ? '65%' : '87%',
+  DYNAMIC_COMPONENTS_WIDTH: utils.dimension.isPad ? '65%' : '90%',
   DYNAMIC_POPUP_WIDTH: utils.dimension.isPad ? '65%' : '100%',
 };
 

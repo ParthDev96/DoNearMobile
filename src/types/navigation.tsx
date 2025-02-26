@@ -22,7 +22,6 @@ type RootStackParamList = {
   HomeScreen: {};
   NGOScreen: {};
   AddDonateProduct: {};
-  DonateProductListScreen: {};
   ProductDetails: {
     product: PRODUCT;
     isCollect?: boolean;

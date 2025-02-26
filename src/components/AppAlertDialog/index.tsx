@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     padding: utils.normalize(20),
     borderRadius: utils.normalize(10),
     alignItems: 'center',
-    width: config.ConstantVariables.DYNAMIC_POPUP_WIDTH,
+    width: config.ConstantVariables.DYNAMIC_COMPONENTS_WIDTH,
     alignSelf: 'center',
   },
   modalTitle: {

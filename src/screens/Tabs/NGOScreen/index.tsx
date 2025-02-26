@@ -7,10 +7,10 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import StaticData from 'src/utils/StaticData';
 import Components from 'src/components';
 import CollectProductItemComponent from 'src/components/ListItems/CollectProductItemComponent';
-import Toast from 'react-native-toast-message';
 import utils from 'src/utils';
 import config from 'src/config';
 import {useTranslation} from 'react-i18next';
+import {successToast} from 'src/config/toastConfig';
 
 const NGOScreen = ({navigation}: StackPropsType<'NGOScreen'>) => {
   const [data, setData] = useState<PRODUCT[]>([]);
@@ -27,11 +27,8 @@ const NGOScreen = ({navigation}: StackPropsType<'NGOScreen'>) => {
   }, []);
 
   const onPressCollect = useCallback(() => {
-    Toast.show({
-      type: 'customToast',
-      props: {
-        message: t('ProductAddedToTheCart'),
-      },
+    successToast({
+      text1: t('ProductAddedToTheCart'),
     });
     // dispatch(addProductToCart(item));
     // const t_data = [...data];

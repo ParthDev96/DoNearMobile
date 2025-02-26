@@ -12,7 +12,6 @@ import useImagePicker from 'src/hooks/useImagePicker';
 import styles from './styles';
 import {AppAlertDialog} from 'src/components/AppAlertDialog';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
-import Toast from 'react-native-toast-message';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import CustomText from 'src/components/CustomText';
 import config from 'src/config';
@@ -20,6 +19,7 @@ import Components from 'src/components';
 import {useTranslation} from 'react-i18next';
 import utils from 'src/utils';
 import {ProductCondition} from 'src/config/enums';
+import {successToast} from 'src/config/toastConfig';
 
 const AddDonateProduct = ({navigation}: StackPropsType<'AddDonateProduct'>) => {
   const {t} = useTranslation();
@@ -95,14 +95,11 @@ const AddDonateProduct = ({navigation}: StackPropsType<'AddDonateProduct'>) => {
   }, [renderCustomInfoView, t]);
 
   const onPressAdd = useCallback(() => {
-    Toast.show({
-      type: 'customToast',
-      props: {
-        message: t('ProductAddedSuccessully'),
-      },
+    successToast({
+      text1: t('ProductAddedSuccessully'),
     });
-    navigation.replace('DonateProductListScreen', {});
-  }, [navigation, t]);
+    navigation.popToTop();
+  }, [t, navigation]);
 
   const onPressSelectImage = useCallback(() => {
     setModalVisible(true);
