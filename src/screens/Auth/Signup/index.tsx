@@ -2,7 +2,7 @@ import React, {useCallback, useRef, useState} from 'react';
 import {View, Keyboard, ScrollView, TextInput} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import validations from 'src/utils/validations';
-import AppLoader from 'src/components/AppLoader/AppLoaderManager';
+// import AppLoader from 'src/components/AppLoader/AppLoaderManager';
 import styles from './styles';
 import Components from 'src/components';
 import config from 'src/config';
@@ -70,8 +70,11 @@ const Signup = ({navigation}: StackPropsType<'Signup'>) => {
       return;
     }
     Keyboard.dismiss();
-
-    AppLoader.show({});
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'UpdateProfile'}],
+    });
+    // AppLoader.show({});
     // Call loginUser function
 
     // const result = await registerUser(emailText, passwordText);
@@ -112,7 +115,7 @@ const Signup = ({navigation}: StackPropsType<'Signup'>) => {
     //     text2: result.message,
     //   });
     // }
-  }, [confirmPassword, email, password]);
+  }, [navigation, confirmPassword, email, password]);
 
   return (
     <View style={styles.container}>

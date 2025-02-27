@@ -8,7 +8,6 @@ import {
 import React, {useCallback, useMemo, useState} from 'react';
 import {StackPropsType} from 'src/types/navigation';
 import {Asset} from 'react-native-image-picker';
-import useImagePicker from 'src/hooks/useImagePicker';
 import styles from './styles';
 import {AppAlertDialog} from 'src/components/AppAlertDialog';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
@@ -20,46 +19,23 @@ import {useTranslation} from 'react-i18next';
 import utils from 'src/utils';
 import {ProductCondition} from 'src/config/enums';
 import {successToast} from 'src/config/toastConfig';
+import AppMediaOptions from 'src/components/AppMediaOptions/AppMediaOptionsManager';
+import {IMediaOptions} from 'src/components/AppMediaOptions/AppMediaOptions';
+import useSelectImage from 'src/hooks/useSelectImage';
 
 const AddDonateProduct = ({navigation}: StackPropsType<'AddDonateProduct'>) => {
   const {t} = useTranslation();
   const [images, setImages] = useState<Asset[]>([]);
-  const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [selectedCondition, setSelectedCondition] = useState(
     ProductCondition.NEW,
   );
+  const {chooseFromCamera, chooseFromGallery} = useSelectImage();
 
   const [title, setTitle] = useState<string>('');
   const [titleError, setTitleError] = useState('');
 
   const [description, setDescription] = useState<string>('');
   const [descriptionError, setDescriptionError] = useState('');
-
-  const {pickImageFromCamera, pickImageFromGallery} = useImagePicker();
-
-  const handlePickImageFromCamera = async () => {
-    try {
-      const result: any = await pickImageFromCamera();
-      if (result) {
-        const t_image = [...images];
-        t_image.push(result);
-        setImages(t_image);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handlePickImageFromGallery = async () => {
-    try {
-      const result: any = await pickImageFromGallery();
-      const t_image = [...images];
-      t_image.push(result);
-      setImages(t_image);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const renderCustomInfoView = useMemo(() => {
     return (
@@ -102,8 +78,25 @@ const AddDonateProduct = ({navigation}: StackPropsType<'AddDonateProduct'>) => {
   }, [t, navigation]);
 
   const onPressSelectImage = useCallback(() => {
-    setModalVisible(true);
-  }, []);
+    AppMediaOptions.show({
+      onSelectOption: async (option: string) => {
+        if (option === IMediaOptions.camera) {
+          chooseFromCamera();
+        } else if (option === IMediaOptions.gallery) {
+          const s_image: any = await chooseFromGallery({
+            freeStyleCropEnabled: false,
+            height: 300,
+            width: 300,
+          });
+          if (s_image && s_image.path) {
+            const t_image = [...images];
+            t_image.push(s_image.path);
+            setImages(t_image);
+          }
+        }
+      },
+    });
+  }, [chooseFromCamera, chooseFromGallery, images]);
 
   const renderSelectedItem = useMemo(() => {
     if (images) {
@@ -246,23 +239,6 @@ const AddDonateProduct = ({navigation}: StackPropsType<'AddDonateProduct'>) => {
           />
           <SafeAreaView />
         </View>
-
-        <Components.ImagePickerModal
-          isVisible={modalVisible}
-          onClose={() => setModalVisible(false)}
-          onSelectGallery={() => {
-            setModalVisible(false);
-            setTimeout(() => {
-              handlePickImageFromGallery();
-            }, 500);
-          }}
-          onSelectCamera={() => {
-            setModalVisible(false);
-            setTimeout(() => {
-              handlePickImageFromCamera();
-            }, 500);
-          }}
-        />
       </ScrollView>
     </View>
   );

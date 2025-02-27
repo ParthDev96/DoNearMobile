@@ -32,14 +32,14 @@ const HomeScreen = ({navigation}: StackPropsType<'HomeScreen'>) => {
       return (
         <Components.DonateProductItemComponent
           onPressItem={() => {
-            // navigation.navigate('ProductDetailsScreen', {product: item});
+            navigation.navigate('ProductDetails', {product: item});
           }}
           item={item}
           index={index}
         />
       );
     },
-    [],
+    [navigation],
   );
 
   const renderItemSep = useCallback(() => {

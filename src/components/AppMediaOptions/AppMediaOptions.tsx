@@ -57,7 +57,7 @@ const AppMediaOptionsModal: React.FC = () => {
           style={[
             styles.modalView,
             {
-              paddingBottom: insets.bottom + 10,
+              paddingBottom: insets.bottom,
             },
           ]}>
           <CustomText style={styles.message}>{t('ChooseOption')}</CustomText>
@@ -116,11 +116,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0,
   },
   modalView: {
+    width: config.ConstantVariables.DYNAMIC_POPUP_WIDTH,
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderTopLeftRadius: utils.normalize(20),
+    borderTopRightRadius: utils.normalize(20),
     padding: utils.normalize(20),
     alignSelf: 'center',
-    width: '100%',
   },
   message: {
     fontSize: utils.normalize(15),

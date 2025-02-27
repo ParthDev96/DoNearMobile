@@ -14,7 +14,7 @@ export default StyleSheet.create({
     borderRadius: utils.normalize(60),
   },
   headerTitle: {
-    marginLeft: utils.normalize(20),
+    // marginLeft: utils.normalize(20),
   },
   rowContainer: {
     height: utils.normalize(100),
