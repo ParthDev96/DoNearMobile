@@ -17,15 +17,15 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/redux/store';
-import RootStackScreen from 'src/routes/stackNav';
 import KeyboardManager from 'react-native-keyboard-manager';
-import AppLoaderModal from 'src/components/AppLoader/AppLoaderModal';
+import {navigationRef} from 'src/routes/RootNavigation';
+import RootStackScreen from 'src/routes/stackNav';
 import AppPopupModal from 'src/components/AppPopup/AppPopupModal';
 import AppMediaOptionsModal from 'src/components/AppMediaOptions/AppMediaOptions';
 import AppAlertDialogModal, {
   AppAlertDialog,
 } from 'src/components/AppAlertDialog';
-import {navigationRef} from 'src/routes/RootNavigation';
+import AppLoaderModal from 'src/components/AppLoader/AppLoaderModal';
 
 if (Platform.OS === 'ios') {
   KeyboardManager.setEnable(true);

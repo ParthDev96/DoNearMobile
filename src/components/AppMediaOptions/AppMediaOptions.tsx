@@ -48,8 +48,6 @@ const AppMediaOptionsModal: React.FC = () => {
     <View>
       <Modal
         statusBarTranslucent
-        deviceWidth={utils.extraDimension.deviceWidth}
-        deviceHeight={utils.extraDimension.deviceHeight}
         style={styles.modalStyle}
         isVisible={isVisible}
         onBackdropPress={() => AppPopupManager.hide()}>
@@ -89,7 +87,8 @@ const AppMediaOptionsModal: React.FC = () => {
             onPress={() => {
               AppPopupManager.hide();
             }}
-            containerStyle={styles.galleryButton}
+            containerStyle={styles.cancelButton}
+            hasShadow={false}
           />
         </View>
       </Modal>
@@ -133,6 +132,10 @@ const styles = StyleSheet.create({
   },
   galleryButton: {
     marginTop: utils.normalize(20),
+  },
+  cancelButton: {
+    marginTop: utils.normalize(20),
+    marginBottom: utils.normalize(20),
   },
   submitButtonText: {},
   cancelButtonText: {

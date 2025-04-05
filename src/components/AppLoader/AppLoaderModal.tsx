@@ -36,8 +36,6 @@ const AppLoaderModal: React.FC = () => {
     <View>
       <Modal
         statusBarTranslucent
-        deviceWidth={utils.extraDimension.deviceWidth}
-        deviceHeight={utils.extraDimension.deviceHeight}
         animationIn={'fadeIn'}
         animationOut={'fadeOut'}
         isVisible={isVisible}>

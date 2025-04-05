@@ -1,6 +1,12 @@
 import React, {useState, useEffect, useMemo} from 'react';
-import {View, StyleSheet, TextStyle, ViewStyle, Image} from 'react-native';
-import Modal from 'react-native-modal';
+import {
+  View,
+  StyleSheet,
+  TextStyle,
+  ViewStyle,
+  Image,
+  Modal,
+} from 'react-native';
 import AppPopupManager from './AppPopup';
 import Components from '..';
 import {useTranslation} from 'react-i18next';
@@ -127,47 +133,54 @@ const AppPopupModal: React.FC = () => {
 
   return (
     <View>
-      <Modal statusBarTranslucent={true} isVisible={isVisible}>
-        <View style={styles.modalView}>
-          {modalConfig.image && (
-            <Image
-              source={modalConfig.image}
-              resizeMode="contain"
-              style={styles.image}
-            />
-          )}
-          {modalConfig.customIcon && (
-            <View style={styles.customIconContainer}>
-              {modalConfig.customIcon}
+      <Modal
+        transparent
+        animationType="fade"
+        statusBarTranslucent={true}
+        visible={isVisible}>
+        <View style={styles.modalContainer}>
+          <View style={styles.modalView}>
+            {modalConfig.image && (
+              <Image
+                source={modalConfig.image}
+                resizeMode="contain"
+                style={styles.image}
+              />
+            )}
+            {modalConfig.customIcon && (
+              <View style={styles.customIconContainer}>
+                {modalConfig.customIcon}
+              </View>
+            )}
+            <Components.CustomText
+              style={[styles.title, modalConfig.titleStyle]}>
+              {modalConfig.title}
+            </Components.CustomText>
+            <Components.CustomText
+              style={[styles.message, modalConfig.messageStyle]}>
+              {modalConfig.message}
+            </Components.CustomText>
+            <View style={styles.buttonContainer}>
+              {renderCancelButton}
+              <Components.AppButton
+                style={StyleSheet.flatten([
+                  styles.submitButtonStyle,
+                  modalConfig.submitButtonStyle,
+                ])}
+                textStyle={StyleSheet.flatten([
+                  styles.submitButtonText,
+                  modalConfig.submitButtonTextStyle,
+                ])}
+                text={modalConfig.submitText}
+                onPress={() => {
+                  if (modalConfig.onSubmit) {
+                    modalConfig.onSubmit();
+                  }
+                  AppPopupManager.hide();
+                }}
+                containerStyle={styles.button}
+              />
             </View>
-          )}
-          <Components.CustomText style={[styles.title, modalConfig.titleStyle]}>
-            {modalConfig.title}
-          </Components.CustomText>
-          <Components.CustomText
-            style={[styles.message, modalConfig.messageStyle]}>
-            {modalConfig.message}
-          </Components.CustomText>
-          <View style={styles.buttonContainer}>
-            {renderCancelButton}
-            <Components.AppButton
-              style={StyleSheet.flatten([
-                styles.submitButtonStyle,
-                modalConfig.submitButtonStyle,
-              ])}
-              textStyle={StyleSheet.flatten([
-                styles.submitButtonText,
-                modalConfig.submitButtonTextStyle,
-              ])}
-              text={modalConfig.submitText}
-              onPress={() => {
-                if (modalConfig.onSubmit) {
-                  modalConfig.onSubmit();
-                }
-                AppPopupManager.hide();
-              }}
-              containerStyle={styles.button}
-            />
           </View>
         </View>
       </Modal>
@@ -176,6 +189,12 @@ const AppPopupModal: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: config.colors.COLOR_BLACK + '80',
+  },
   customIconContainer: {
     marginBottom: utils.normalize(10),
   },

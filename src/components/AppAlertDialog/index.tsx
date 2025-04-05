@@ -1,6 +1,5 @@
 import React, {forwardRef, useImperativeHandle, useMemo, useState} from 'react';
-import {View, StyleSheet} from 'react-native';
-import Modal from 'react-native-modal';
+import {View, StyleSheet, Modal} from 'react-native';
 import config from '../../config';
 import utils from '../../utils';
 import CustomText from '../CustomText';
@@ -38,28 +37,32 @@ const AppAlertDialogModal = forwardRef((props, ref) => {
   const renderViews = useMemo(() => {
     if (modalProps) {
       return (
-        <View style={styles.modalContainer}>
-          <CustomText style={styles.modalTitle}>{modalProps.title}</CustomText>
-          {modalProps.message && (
-            <CustomText style={styles.modalText}>
-              {modalProps.message}
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            <CustomText style={styles.modalTitle}>
+              {modalProps.title}
             </CustomText>
-          )}
-          {modalProps.customMessageView && modalProps.customMessageView}
-          <AppButton
-            text={
-              modalProps.positiveButtonText
-                ? modalProps.positiveButtonText
-                : t('Close')
-            }
-            onPress={() => {
-              if (modalProps.onPositiveButtonPress) {
-                modalProps.onPositiveButtonPress();
+            {modalProps.message && (
+              <CustomText style={styles.modalText}>
+                {modalProps.message}
+              </CustomText>
+            )}
+            {modalProps.customMessageView && modalProps.customMessageView}
+            <AppButton
+              text={
+                modalProps.positiveButtonText
+                  ? modalProps.positiveButtonText
+                  : t('Close')
               }
-              setVisible(false);
-            }}
-            style={styles.positiveButtonContainer}
-          />
+              onPress={() => {
+                if (modalProps.onPositiveButtonPress) {
+                  modalProps.onPositiveButtonPress();
+                }
+                setVisible(false);
+              }}
+              style={styles.positiveButtonContainer}
+            />
+          </View>
         </View>
       );
     }
@@ -67,12 +70,11 @@ const AppAlertDialogModal = forwardRef((props, ref) => {
   return (
     <View>
       <Modal
-        isVisible={isModalVisible}
+        visible={isModalVisible}
         statusBarTranslucent
-        style={styles.modal}
-        onBackButtonPress={() => {
-          setVisible(false);
-        }}>
+        transparent
+        animationType="fade"
+        style={styles.modal}>
         {renderViews}
       </Modal>
     </View>
@@ -117,6 +119,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: config.ConstantVariables.DYNAMIC_COMPONENTS_WIDTH,
     alignSelf: 'center',
+  },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: config.colors.COLOR_BLACK + '80',
   },
   modalTitle: {
     fontSize: utils.normalize(18),
